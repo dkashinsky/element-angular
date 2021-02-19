@@ -1,5 +1,5 @@
 import { forwardRef, Inject, Injectable, LOCALE_ID } from '@angular/core'
-import { Http } from '@angular/http'
+import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs/Observable'
 import { environment } from '../../../../environments'
 
@@ -10,22 +10,21 @@ export class DocsService {
   path: string
   
   constructor(
-    private http:Http,
+    private http: HttpClient,
     @Inject(forwardRef(() => LOCALE_ID)) private locale: string,
   ) {
+    debugger;
     const host:string = (<any>environment).faas ? environment.faasHost : environment.host
     this.path = this.locale === 'en-US' ? '/en-US' : ''
     this.url = host + this.path
   }
   
   getCatalog(): Observable<any> {
-    return this.http.get(`${this.url}/catalog.json`)
-      .map(res => res.json())
+    return this.http.get(`${this.url}/catalog.json`);
   }
   
   getDocuments(documentType: string): Observable<any> {
-    return this.http.get(`${this.url}/${documentType}.json`)
-      .map(res => res.json())
+    return this.http.get(`${this.url}/${documentType}.json`);
   }
   
   getVersion(): Observable<any> {
@@ -33,8 +32,7 @@ export class DocsService {
   }
   
   getChangeLogs(): Observable<any> {
-    return this.http.get(`${this.url}/changelog.json`)
-      .map(res => res.json())
+    return this.http.get(`${this.url}/changelog.json`);
   }
   
 }
