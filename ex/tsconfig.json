@@ -10,6 +10,9 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true
   },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": "off"
+  },
   "typeRoots": [
     "../node_modules/@types"
   ],

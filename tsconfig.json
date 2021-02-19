@@ -21,7 +21,8 @@
     "strictMetadataEmit": true,
     "annotateForClosureCompiler": true,
     "flatModuleId": "element-angular",
-    "skipTemplateCodegen": true
+    "skipTemplateCodegen": true,
+    "preserveWhitespaces": "off"
   },
   "exclude": [
     "ex",
