@@ -6,16 +6,12 @@
 
 <h2 align="center"> Element for Angular </h2>
 
-[![npm version](https://badge.fury.io/js/element-angular.svg)](https://badge.fury.io/js/element-angular)
 [![npm](https://img.shields.io/npm/dt/element-angular.svg)](http://npm-stat.com/charts.html?package=v2ex-cli)
-[![Join the chat at https://gitter.im/element-angular/Lobby](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/element-angular/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Catalog
 
 -  [Documentation](#documentation)
 -  [Getting Started](#getting-started)
--  [Contribution](#contribution)
--  [Support](#support)
 -  [LICENSE](#license)
 
 
@@ -55,20 +51,6 @@ import 'element-angular/theme/index.css'
 ```
 
 More: [Doc](https://element-angular.faas.ele.me)
-
-
-
-## Contribution
-
-- [Contribution Guide](https://github.com/eleme/element-angular/blob/master/.github/CONTRIBUTING.en-US.md)
-
-- [贡献指南](https://github.com/eleme/element-angular/blob/master/.github/CONTRIBUTING.zh-CN.md)
-
-
-
-## Support
-
-Modern browsers and Internet Explorer 9+.
 
 
 ## LICENSE
