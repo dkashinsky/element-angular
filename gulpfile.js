@@ -24,7 +24,7 @@ gulp.task('lint', () => gulp.src(['src/**/*.ts', 'test/{util,mock}/*.ts'])
 
 
 gulp.task('compile', done => {
-  exec(`${compilePath} -p ./tsconfig.json`, err => err ? console.log(err) : done())
+  exec(`${compilePath} -p ./tsconfig.legacy.json`, err => err ? console.log(err) : done())
     .stdout
     .on('data', data => console.log(data))
 })
