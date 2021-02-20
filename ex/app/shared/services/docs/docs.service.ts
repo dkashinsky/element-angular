@@ -1,6 +1,6 @@
 import { forwardRef, Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
-import { Observable } from 'rxjs/Observable'
+import { Observable, of } from 'rxjs'
 import { environment } from '../../../../environments'
 
 @Injectable()
@@ -28,7 +28,7 @@ export class DocsService {
   }
   
   getVersion(): Observable<any> {
-    return Observable.of(environment.version || '1.0.0')
+    return of(environment.version || '1.0.0')
   }
   
   getChangeLogs(): Observable<any> {
