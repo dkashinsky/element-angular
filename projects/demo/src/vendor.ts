@@ -5,7 +5,3 @@ import '@angular/common'
 import '@angular/http'
 import '@angular/router'
 import 'rxjs'
-
-import 'highlight.js/styles/github.css'
-import './assets/styles/example.css'
-import '../theme/index.css'
