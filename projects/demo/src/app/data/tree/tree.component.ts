@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core'
+import { UserSafeHooks } from 'src/tree/tree'
 import code from './code'
-import { UserSafeHooks } from '../../../../src/tree/tree'
 
 class DemoClass implements AfterViewInit {
   @ViewChild('tree') tree: ElementRef

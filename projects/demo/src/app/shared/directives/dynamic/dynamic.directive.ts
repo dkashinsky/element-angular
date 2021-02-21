@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 
 // Rendering ElComponent dependence
-import { ElModule } from '../../../../../src/element-angular.module'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { ElModule } from 'src/element-angular.module'
 
 @Directive({
   selector: '[ex-dynamic]',

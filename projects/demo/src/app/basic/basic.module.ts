@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { BasicRoutingModule } from './basic.routing'
-import { ElModule } from '../../../src/element-angular.module'
 import { ExSharedModule } from '../shared/module'
 
 import { ExBasicMainComponent } from './main/main.component'
@@ -12,6 +11,7 @@ import { ExLayoutComponent } from './layout/layout.component'
 import { ExColorComponent } from './color/color.component'
 import { ExFontComponent } from './font/font.component'
 import { ExContainerComponent } from './container/container.component'
+import { ElModule } from 'src/element-angular.module'
 
 @NgModule({
   declarations: [

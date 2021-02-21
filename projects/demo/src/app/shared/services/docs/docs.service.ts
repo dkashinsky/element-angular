@@ -1,7 +1,7 @@
 import { forwardRef, Inject, Injectable, LOCALE_ID } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
-import { environment } from '../../../../environments'
+import { environment } from 'projects/demo/src/environments/environment'
 
 @Injectable()
 export class DocsService {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { trigger, state, style, animate, transition } from '@angular/animations'
-import { environment } from '../../../environments'
+import { environment } from 'projects/demo/src/environments/environment'
 
 @Component({
   selector: 'ex-footer',
