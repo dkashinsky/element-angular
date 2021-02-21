@@ -62,7 +62,7 @@
     "@angular/language-service": "^6.1.10",
     "@angular/platform-server": "^6.1.10",
     "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-angular": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@types/highlight.js": "^9.1.9",
     "@types/node": "~8.9.4",
     "@types/webpack": "^3.0.9",
