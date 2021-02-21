@@ -5,18 +5,15 @@ import { environment } from 'projects/demo/src/environments/environment'
 
 @Injectable()
 export class DocsService {
-  
+  baseUrl: string = '/docs';
   url: string
-  path: string
   
   constructor(
     private http: HttpClient,
     @Inject(forwardRef(() => LOCALE_ID)) private locale: string,
   ) {
-    debugger;
-    const host:string = (<any>environment).faas ? environment.faasHost : environment.host
-    this.path = this.locale === 'en-US' ? '/en-US' : ''
-    this.url = host + this.path
+    const path = this.locale === 'en-US' ? '/en-US' : ''
+    this.url = this.baseUrl + path;
   }
   
   getCatalog(): Observable<any> {
