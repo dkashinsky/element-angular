@@ -1,16 +1,36 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { RouterModule } from '@angular/router'
+import { HttpClientModule } from '@angular/common/http'
+import { AppRoutingModule } from './app.routing'
+import { ExComponentModule } from './components/module'
 
-import { AppComponent } from './app.component';
+import { ExAppComponent } from './app.component'
+import { ExSharedModule } from './shared/module'
+import { DocsService } from './shared/services/docs/docs.service'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ElModule } from 'src/element-angular.module'
 
 @NgModule({
   declarations: [
-    AppComponent
+    ExAppComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    RouterModule,
+    HttpClientModule,
+    ElModule.forRoot(),
+    ExSharedModule.forRoot(),
+    AppRoutingModule,
+    ExComponentModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    DocsService,
+    { provide: 'WindowLocation', useValue: location },
+  ],
+  bootstrap: [ExAppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}
+

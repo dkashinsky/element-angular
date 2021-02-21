@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
-};
+  production: true,
+  host: '/element-angular/docs',
+  faasHost: '/docs',
+}
