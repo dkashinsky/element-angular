@@ -99,6 +99,32 @@
           }
         }
       }
+    },
+    "element-angular": {
+      "root": "projects/element-angular",
+      "sourceRoot": "projects/element-angular/src",
+      "projectType": "library",
+      "prefix": "el",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/element-angular/tsconfig.lib.json",
+            "project": "projects/element-angular/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/element-angular/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "demo"
