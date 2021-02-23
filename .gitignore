@@ -10,3 +10,4 @@ temp
 *.log.*
 bundle
 release
+dist
