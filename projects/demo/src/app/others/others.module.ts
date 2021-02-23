@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { OthersRoutingModule } from './others.routing'
-import { ElModule } from 'src/element-angular.module'
+import { ElModule } from 'projects/element-angular/src/public_api'
 
 import { ExUserMainComponent } from './main/main.component'
 import { ExTooltipComponent } from './tooltip/tooltip.component'

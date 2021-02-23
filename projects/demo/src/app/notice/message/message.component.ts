@@ -1,5 +1,5 @@
 import { Component, forwardRef, Inject, ViewEncapsulation } from '@angular/core'
-import { ElMessageService } from 'src/element-angular.module'
+import { ElMessageService } from 'projects/element-angular/src/public_api'
 import code from './code'
 
 @Component({

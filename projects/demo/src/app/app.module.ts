@@ -9,7 +9,7 @@ import { ExAppComponent } from './app.component'
 import { ExSharedModule } from './shared/module'
 import { DocsService } from './shared/services/docs/docs.service'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { ElModule } from 'src/element-angular.module'
+import { ElModule } from 'projects/element-angular/src/public_api'
 
 @NgModule({
   declarations: [

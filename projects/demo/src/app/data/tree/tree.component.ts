@@ -1,10 +1,9 @@
 import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core'
-import { UserSafeHooks } from 'src/tree/tree'
 import code from './code'
 
 class DemoClass implements AfterViewInit {
   @ViewChild('tree') tree: ElementRef
-  hooks: UserSafeHooks
+  hooks: any;
   
   data: any = [{
     label: '一级 1',
