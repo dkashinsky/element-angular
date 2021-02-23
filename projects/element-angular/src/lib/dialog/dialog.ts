@@ -3,9 +3,9 @@ import {
   OnInit, Renderer2, SimpleChanges, TemplateRef,
 } from '@angular/core'
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
-import { DocumentWrapper, WindowWrapper } from '../shared/services'
+import { DocumentWrapper, WindowWrapper } from '../shared/services/dynamic.service'
 import { ElDialogProps } from './dialog.props'
-import { dialogFadeAnimation } from '../shared/animation'
+import { dialogFadeAnimation } from '../shared/animation/dialog-fade.animation'
 
 @Component({
   selector: 'el-dialog',

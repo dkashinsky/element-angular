@@ -2,8 +2,14 @@ import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { ElContainer } from './container'
 import { ElContainerDirective } from './container.directive'
-import { ElHeader, ElAside, ElMain, ElFooter } from './children'
-import { ElAsideDirective, ElFooterDirective, ElHeaderDirective, ElMainDirective } from './directives'
+import { ElHeader } from './children/header'
+import { ElAside } from './children/aside'
+import { ElMain } from './children/main'
+import { ElFooter } from './children/footer'
+import { ElHeaderDirective } from './directives/header.directive'
+import { ElMainDirective } from './directives/main.directive'
+import { ElFooterDirective } from './directives/footer.directive'
+import { ElAsideDirective } from './directives/aside.directive'
 
 
 @NgModule({

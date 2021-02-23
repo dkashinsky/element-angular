@@ -2,8 +2,11 @@ import { NgModule, ModuleWithProviders } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { ElSelectModule } from '../select/module'
-import { ElPaginationButton, ElPaginationPager, ElPaginationSize, ElPaginationJump } from './children'
 import { ElPagination } from './pagination'
+import { ElPaginationButton } from './children/button'
+import { ElPaginationPager } from './children/pager'
+import { ElPaginationSize } from './children/size'
+import { ElPaginationJump } from './children/jump'
 
 
 @NgModule({

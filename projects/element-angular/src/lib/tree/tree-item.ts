@@ -3,7 +3,7 @@ import {
 } from '@angular/core'
 import { ElTree } from './tree'
 import { ElTreeModelData } from './tree-props'
-import { dropAnimation } from '../shared/animation'
+import { dropAnimation } from '../shared/animation/drop.animation'
 
 @Component({
   selector: 'el-tree-item',
