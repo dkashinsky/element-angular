@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { ElModule } from 'projects/element-angular/src/public_api'
+import { ElModule } from '@fsdk/element-angular'
 import { ExFooterNavComponent, ExDemoComponent, ExDocumentComponent } from './components'
 import { ElDynamicDirective } from './directives'
 import { HighLightPipe } from './pipe'

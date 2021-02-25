@@ -3,7 +3,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 import { SafeHtml, DomSanitizer } from '@angular/platform-browser'
 import { ActivatedRoute } from '@angular/router'
 import { HighLightPipe } from '../../pipe'
-import { ElMessageService } from 'projects/element-angular/src/public_api'
+import { ElMessageService } from '@fsdk/element-angular'
 
 @Component({
   selector: 'ex-demo',

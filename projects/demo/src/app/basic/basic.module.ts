@@ -11,7 +11,7 @@ import { ExLayoutComponent } from './layout/layout.component'
 import { ExColorComponent } from './color/color.component'
 import { ExFontComponent } from './font/font.component'
 import { ExContainerComponent } from './container/container.component'
-import { ElModule } from 'projects/element-angular/src/public_api'
+import { ElModule } from '@fsdk/element-angular'
 
 @NgModule({
   declarations: [

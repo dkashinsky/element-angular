@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { FormRoutingModule } from './form.routing'
-import { ElModule } from 'projects/element-angular/src/public_api'
+import { ElModule } from '@fsdk/element-angular'
 import { ExSharedModule } from '../shared/module'
 
 import { ExFormMainComponent } from './main/main.component'

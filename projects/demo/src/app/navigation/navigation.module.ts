@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { NavRoutingModule } from './navigation.routing'
-import { ElModule } from 'projects/element-angular/src/public_api'
+import { ElModule } from '@fsdk/element-angular'
 
 import { ExNavigationMainComponent } from './main/main.component'
 import { ExMenuComponent } from './menu/menu.component'

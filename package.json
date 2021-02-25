@@ -1,23 +1,16 @@
 {
-  "name": "@dk/element-angular",
+  "name": "@fsdk/element-angular",
   "version": "0.7.6",
   "description": "element ui for angular",
-  "main": "./release/element-angular.module.js",
-  "unpkg": "bundle/element-angular.js",
-  "files": [
-    "release",
-    "theme",
-    "bundle",
-    "index.ts"
-  ],
+  "private": true,
   "scripts": {
+    "start": "ng build element-angular && ng serve -o",
+    "build": "ng build",
     "dev": "gulp && gulp build:watch",
-    "build": "gulp build",
     "ex": "env DEBUG=true webpack-dev-server --config build/webpack.dev.js --inline --progress --port 1338",
     "ex:build": "gulp clean:ex && webpack --config build/webpack.prod.js",
     "ex:publish": "node build/publish.js",
     "i18n": "./node_modules/.bin/ng-xi18n -p ./ex --i18nFormat=xlf --locale=en-US",
-    "faas": "npm run ex:build --publish_type=faas && faas deploy alpha",
     "clean": "gulp clean && gulp clean:ex",
     "elements:upload": "node build/bin/elements-upload.locale",
     "elements:update": "node build/bin/elements-update.locale",
@@ -27,34 +20,19 @@
     "commit": "node_modules/commitizen/bin/commitizen init cz-conventional-changelog --save --save-exact",
     "commitmsg": "commitlint -e $GIT_PARAMS"
   },
-  "faas": {
-    "domain": "element-angular",
-    "public": "dist",
-    "description": "element ui for angular",
-    "author_name": "WittBulter",
-    "author_email": "nanazuimeng123@gmail.com",
-    "notice": [
-      "zhendong.li@ele.me"
-    ],
-    "build": [
-      "npm i",
-      "npm run ex:build --publish_type=faas"
-    ]
-  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:eleme/element-angular.git"
+    "url": "git@github.com:dkashinsky/element-angular.git"
   },
   "keywords": [
-    "eleme",
     "element",
     "angular",
     "typescript"
   ],
   "bugs": {
-    "url": "https://github.com/eleme/element-angular/issues"
+    "url": "https://github.com/dkashinsky/element-angular/issues"
   },
-  "author": "WittBulter",
+  "author": "Dmitry Kashinsky",
   "license": "MIT",
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",

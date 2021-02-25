@@ -1,5 +1,5 @@
 import { Component, forwardRef, Inject, ViewEncapsulation } from '@angular/core'
-import { ElNotificationService } from 'projects/element-angular/src/public_api'
+import { ElNotificationService } from '@fsdk/element-angular'
 import code from './code'
 
 @Component({

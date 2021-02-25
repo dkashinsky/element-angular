@@ -18,10 +18,10 @@
       "node_modules/@types"
     ],
     "paths": {
-      "element-angular": [
+      "@fsdk/element-angular": [
         "dist/element-angular"
       ],
-      "element-angular/*": [
+      "@fsdk/element-angular/*": [
         "dist/element-angular/*"
       ]
     }
