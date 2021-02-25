@@ -1,5 +1,5 @@
 import { Component, ContentChild, Host, Input, OnInit, TemplateRef } from '@angular/core'
-import { dropAnimation } from '../shared/animation'
+import { dropAnimation } from '../shared/animation/drop.animation'
 import { ElMenu } from './menu'
 
 @Component({

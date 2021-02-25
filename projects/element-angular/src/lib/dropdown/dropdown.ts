@@ -5,8 +5,8 @@ import {
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
 import { Value } from './dropdown.item'
 import { ElDropdownProps } from './dropdown.props'
-import { dropAnimation } from './animation'
-import { DocumentWrapper } from '../shared/services'
+import { DocumentWrapper } from '../shared/services/dynamic.service'
+import { dropAnimation } from '../shared/animation/drop.animation'
 
 @Component({
   selector: 'el-dropdown',

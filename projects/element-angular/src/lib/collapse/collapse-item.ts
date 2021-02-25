@@ -1,6 +1,6 @@
 import { Component, ContentChild, Input, OnInit, Optional, TemplateRef } from '@angular/core'
 import { ElCollapse, ModelValue } from './collapse'
-import { dropAnimation } from '../shared/animation'
+import { dropAnimation } from '../shared/animation/drop.animation'
 
 @Component({
   selector: 'el-collapse-item',

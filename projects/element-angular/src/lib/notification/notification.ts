@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core'
-import { notifyAnimation } from '../shared/animation'
+import { notifyAnimation } from '../shared/animation/notify.animation'
 
 export const typeMap: any = {
   success: 'success',

@@ -3,7 +3,7 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core'
-import { DocumentWrapper, WindowWrapper } from '../shared/services'
+import { DocumentWrapper, WindowWrapper } from '../shared/services/dynamic.service'
 import { ModelWithIndexDataItem, OrderMap, TableColumn, TableColumnDataItem, WidthItem } from './table.interface'
 import { ElTableProps } from './table.props'
 import { ElTableFormat } from './utils/format'

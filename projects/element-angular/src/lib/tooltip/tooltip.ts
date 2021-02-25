@@ -2,8 +2,8 @@ import {
   AfterContentInit, Component, ContentChild, ElementRef, Input,
   Renderer2, TemplateRef, ViewChild,
 } from '@angular/core'
-import { fadeAnimation } from '../shared/animation'
-import { WindowWrapper } from '../shared/services'
+import { fadeAnimation } from '../shared/animation/fade.animation'
+import { WindowWrapper } from '../shared/services/dynamic.service'
 import { getRealShape, getPositionForDir } from '../shared/utils'
 
 export type Shape = { width: number, height: number }

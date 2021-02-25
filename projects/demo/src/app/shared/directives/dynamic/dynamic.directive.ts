@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router'
 
 // Rendering ElComponent dependence
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { ElModule } from 'projects/element-angular/src/public_api'
+import { ElModule } from '@fsdk/element-angular'
 
 @Directive({
   selector: '[ex-dynamic]',

@@ -3,7 +3,7 @@ import {
 } from '@angular/core'
 import { ElSelectPoprs } from './select-props'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
-import { WindowWrapper } from '../shared/services'
+import { WindowWrapper } from '../shared/services/dynamic.service'
 
 export type SelectOption = {
   label?: string | number,

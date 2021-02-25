@@ -3,7 +3,7 @@ import {
   Output, EventEmitter, OnInit, OnChanges, SimpleChanges,
 } from '@angular/core'
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
-import { fadeAnimation } from '../shared/animation'
+import { fadeAnimation } from '../shared/animation/fade.animation'
 import { ElSlider } from './slider'
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Optional, Output, SimpleChanges } from '@angular/core'
 import { ElDataPicker } from './picker'
-import { dropAnimation } from '../shared/animation'
+import { dropAnimation } from '../shared/animation/drop.animation'
 
 export type DateModelItem = {
   month: number,

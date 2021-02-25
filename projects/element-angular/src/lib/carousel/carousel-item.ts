@@ -1,7 +1,7 @@
 import { Component, ElementRef, forwardRef, Inject, Input, OnInit } from '@angular/core'
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
 import { ElCarousel } from './carousel'
-import { fadeAnimation } from '../shared/animation'
+import { fadeAnimation } from '../shared/animation/fade.animation'
 import { removeNgTag } from '../shared/utils'
 
 @Component({

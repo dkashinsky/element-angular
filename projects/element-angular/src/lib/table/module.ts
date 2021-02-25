@@ -1,9 +1,11 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { ElTableHeader, ElTableColumn, ElTableBody } from './children'
 import { ElTable } from './table'
 import { ElTableFormat } from './utils/format'
 import { ElSharedModule } from '../shared/module'
+import { ElTableHeader } from './children/header'
+import { ElTableColumn } from './children/column'
+import { ElTableBody } from './children/body'
 
 @NgModule({
   declarations: [

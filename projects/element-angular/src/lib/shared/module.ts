@@ -1,8 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { ElClassDirective } from './directives'
-import { ExDynamicService, DocumentWrapper, WindowWrapper } from '../shared/services'
-import { ElCSSValuePipe } from './pipe'
+import { ElClassDirective } from './directives/class.directive'
+import { ExDynamicService, DocumentWrapper, WindowWrapper } from '../shared/services/dynamic.service'
+import { ElCSSValuePipe } from './pipe/css-value'
 export function getDocument(): any { return document }
 export function getWindow(): any { return window }
 

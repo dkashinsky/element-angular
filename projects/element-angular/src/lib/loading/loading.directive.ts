@@ -1,7 +1,7 @@
 import {
   Input, Directive, OnInit, ElementRef, Renderer2,
 } from '@angular/core'
-import { DocumentWrapper, WindowWrapper } from '../shared/services'
+import { DocumentWrapper, WindowWrapper } from '../shared/services/dynamic.service'
 
 @Directive({
   selector: '[el-loading]',

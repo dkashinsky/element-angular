@@ -1,6 +1,6 @@
 import { ComponentRef, Injectable, Optional } from '@angular/core'
+import { ExDynamicService } from '../shared/services/dynamic.service'
 import { ElMessageContainer } from './message'
-import { ExDynamicService } from '../shared/services'
 
 export interface Options {
   type?: string

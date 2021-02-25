@@ -1,6 +1,6 @@
 import { Component, Optional } from '@angular/core'
 import { ElCascader } from './cascader'
-import { dropAnimation } from '../shared/animation'
+import { dropAnimation } from '../shared/animation/drop.animation'
 
 @Component({
   selector: 'el-cascader-menu',
