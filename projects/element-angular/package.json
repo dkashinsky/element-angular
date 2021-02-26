@@ -1,7 +1,24 @@
 {
   "name": "@fsdk/element-angular",
-  "version": "0.0.1",
+  "version": "0.6.0",
+  "description": "element ui for angular",
+  "keywords": [
+    "element",
+    "element ui",
+    "angular",
+    "typescript"
+  ],
+  "homepage": "https://github.com/dkashinsky/element-angular#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dkashinsky/element-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dkashinsky/element-angular/issues"
+  },
+  "license": "MIT",
   "peerDependencies": {
+    "@angular/animation": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
   }
