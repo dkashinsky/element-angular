@@ -6,10 +6,10 @@
 
 <h2 align="center">Element for Angular</h2>
 
-## Project info
-
 This project is intended to bring Element UI Kit (https://element.eleme.io/#/en-US) to the angular world.
-The project was initally forked from https://github.com/ElemeFE/element-angular in order to update dependencies so that it can be used along with Angular 9+
+
+The project was initally forked from https://github.com/ElemeFE/element-angular in order to update dependencies so that it can be used along with Angular 9+.
+
 It is now built and packaged with angular cli (v6) toolset and will hopefully be further updated to the current Angular version.
 
 ## Getting Started
