@@ -35,7 +35,7 @@ import { ElMenu } from './menu'
 })
 export class ElSubmenu implements OnInit {
   
-  @ContentChild('title') titleTmp: TemplateRef<any>
+  @ContentChild('title', { static: true }) titleTmp: TemplateRef<any>
   
   @Input() index: string
   @Input() title: string

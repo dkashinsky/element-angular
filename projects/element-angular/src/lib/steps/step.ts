@@ -42,7 +42,7 @@ import { ElSteps } from './steps'
 })
 export class ElStep implements OnInit {
   
-  @ViewChild('titleRef') titleRef: ElementRef
+  @ViewChild('titleRef', { static: true }) titleRef: ElementRef
   
   @Input() title: string
   @Input() description: string

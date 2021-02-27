@@ -23,7 +23,7 @@ import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
 })
 export class ElCard {
   
-  @ContentChild('header') header: TemplateRef<any>
+  @ContentChild('header', { static: true }) header: TemplateRef<any>
   @Input('header') headerStr: string
   @Input('body-style') bodyStyle: string = ''
   

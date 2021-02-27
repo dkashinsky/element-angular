@@ -4,31 +4,31 @@ import { RouterModule, Routes } from '@angular/router'
 export const appRoutes: Routes = [
   {
     path: 'basic',
-    loadChildren: './basic/basic.module#BasicModule',
+    loadChildren: () => import('./basic/basic.module').then(m => m.BasicModule),
   },
   {
     path: 'form',
-    loadChildren: './form/form.module#FormModule',
+    loadChildren: () => import('./form/form.module').then(m => m.FormModule),
   },
   {
     path: 'others',
-    loadChildren: './others/others.module#OthersModule',
+    loadChildren: () => import('./others/others.module').then(m => m.OthersModule),
   },
   {
     path: 'nav',
-    loadChildren: './navigation/navigation.module#NavigationModule',
+    loadChildren: () => import('./navigation/navigation.module').then(m => m.NavigationModule),
   },
   {
     path: 'guide',
-    loadChildren: './components/guide/guide.module#GuideModule',
+    loadChildren: () => import('./components/guide/guide.module').then(m => m.GuideModule),
   },
   {
     path: 'data',
-    loadChildren: './data/data.module#DataModule',
+    loadChildren: () => import('./data/data.module').then(m => m.DataModule),
   },
   {
     path: 'notice',
-    loadChildren: './notice/notice.module#NoticeModule',
+    loadChildren: () => import('./notice/notice.module').then(m => m.NoticeModule),
   },
   { path: '', redirectTo: '/guide/install', pathMatch: 'full' },
 ]

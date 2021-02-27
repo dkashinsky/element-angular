@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, LOCALE_ID, forwardRef } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { NavigationStart, Router } from '@angular/router'
 
 @Component({
@@ -10,11 +10,7 @@ export class ExHeaderComponent implements OnInit {
   
   isGuide: boolean = false
   
-  constructor(
-    private router: Router,
-    @Inject(forwardRef(() => LOCALE_ID)) private locale: string,
-  ) {
-  }
+  constructor(private router: Router) { }
   
   changeLang(lange: string): void {
     const win: any = (<any>window)

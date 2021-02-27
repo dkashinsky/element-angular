@@ -27,8 +27,7 @@ export type RateMap = {
         (click)="selectValue(i)">
         <i class="el-rate__icon" [style]="makeIconStyles(i)"
           [class]="makeIconClasses(i)"
-          [class.hover]="i"
-          #rateIcon></i>
+          [class.hover]="i"></i>
       </span>
       <span *ngIf="showText" class="el-rate__text" [ngStyle]="{ color: textColor }">
         {{ texts[model] }}
@@ -38,7 +37,6 @@ export type RateMap = {
 })
 export class ElRate extends ElRateProps implements OnInit, ControlValueAccessor {
   
-  @ViewChild('rateIcon') rateIcon: ElementRef
   scores: boolean[] = []
   rateMap: RateMap
   backupModel: number
@@ -51,8 +49,9 @@ export class ElRate extends ElRateProps implements OnInit, ControlValueAccessor 
   }
   
   // hover todo
-  hoverToggle({ srcElement }: Event, index?: number, reset: boolean = false): void {
+  hoverToggle(event: MouseEvent, index?: number, reset: boolean = false): void {
     if (this.elDisabled) return
+    const srcElement = event.target as HTMLElement;
     const iconElement: Element = srcElement.tagName === 'I' ? srcElement : srcElement.children[0]
     if (reset) {
       this.model = this.backupModel

@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation } fr
 import code from './code'
 
 class DemoClass implements AfterViewInit {
-  @ViewChild('tree') tree: ElementRef
+  @ViewChild('tree', {static: false }) tree: ElementRef
   hooks: any;
   
   data: any = [{

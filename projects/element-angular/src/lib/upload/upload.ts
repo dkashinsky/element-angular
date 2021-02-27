@@ -51,10 +51,10 @@ import { CommonFile, UploadFile } from './upload.interface'
 })
 export class ElUpload extends ElUploadProps implements OnInit {
   
-  @ContentChild('trigger') trigger: TemplateRef<any>
-  @ContentChild('dragger') dragger: TemplateRef<any>
-  @ContentChild('tip') tip: TemplateRef<any>
-  @ViewChild('input') input: ElementRef
+  @ContentChild('trigger', { static: true }) trigger: TemplateRef<any>
+  @ContentChild('dragger', { static: true }) dragger: TemplateRef<any>
+  @ContentChild('tip', { static: true }) tip: TemplateRef<any>
+  @ViewChild('input', { static: false }) input: ElementRef
   
   files: CommonFile[] = []
   

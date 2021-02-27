@@ -22,7 +22,7 @@ import { ElMenu } from './menu'
 })
 export class ElMenuItemGroup implements OnInit {
   
-  @ContentChild('title') titleTmp: TemplateRef<any>
+  @ContentChild('title', { static: true }) titleTmp: TemplateRef<any>
   @Input() title: string = ''
   
   constructor(

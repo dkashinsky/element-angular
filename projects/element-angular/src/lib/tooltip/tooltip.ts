@@ -34,8 +34,8 @@ export class ElTooltip implements AfterContentInit {
   @Input() popperClass: string
   @Input() effect: string = 'dark'
   @Input('visible-arrow') visibleArrow: boolean = true
-  @ViewChild('popperContent') popperContent: ElementRef
-  @ContentChild('tip') tip: TemplateRef<any>
+  @ViewChild('popperContent', { static: true }) popperContent: ElementRef
+  @ContentChild('tip', { static: true }) tip: TemplateRef<any>
   
   xPlacement: string = 'bottom'
   showPopper: boolean = true

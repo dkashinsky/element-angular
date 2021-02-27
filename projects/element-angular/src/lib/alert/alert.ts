@@ -38,7 +38,7 @@ export const ICON_CLASS_MAP: { [key: string]: string } = {
 })
 export class ElAlert {
   
-  @ContentChild('description') descriptionTmp: TemplateRef<any>
+  @ContentChild('description', { static: true }) descriptionTmp: TemplateRef<any>
   
   @Input() type: string = 'info'
   @Input() center: boolean = false
