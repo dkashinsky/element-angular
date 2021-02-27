@@ -1,6 +1,6 @@
 {
   "name": "@fsdk/element-angular",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "element ui for angular",
   "keywords": [
     "element",
@@ -18,8 +18,8 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@angular/animation": "^7.0.0",
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
+    "@angular/animation": "^8.0.0",
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@fsdk/element-angular",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "element ui for angular",
   "private": true,
   "scripts": {
