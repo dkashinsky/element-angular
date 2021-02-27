@@ -11,7 +11,7 @@ import { environment } from './environments/environment';
 if (environment.production) {
   enableProdMode();
 }
-const LOCALE: string = 'zh-CN'; // (<any>window).localStorage.getItem('LOCALE') || 'zh-CN'
+const LOCALE: string = 'en-US'; // (<any>window).localStorage.getItem('LOCALE') || 'zh-CN'
 
 const makeLocaleID = () => ({ provide: LOCALE_ID, useValue: LOCALE })
 const getProviders = (): Array<StaticProvider> => {
