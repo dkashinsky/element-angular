@@ -53,8 +53,8 @@ export type SelectOption = {
 })
 export class ElSelect extends ElSelectPoprs implements OnInit, OnDestroy, OnChanges, AfterViewInit, ControlValueAccessor {
   
-  @ViewChild('tags') tags: any
-  @ViewChild('input') input: any
+  @ViewChild('tags', { static: false }) tags: ElementRef<HTMLDivElement>
+  @ViewChild('input', { static: false, read: ElementRef }) input: ElementRef;
   selfWidth: string
   subscriber: Function[] = []
   multipleLabels: Array<string | number> = []
@@ -190,7 +190,7 @@ export class ElSelect extends ElSelectPoprs implements OnInit, OnDestroy, OnChan
     const updateHandle = () => {
       if (!this.tags) return
       const children = this.tags.nativeElement && this.tags.nativeElement.children
-      const inputEl: Element = this.input.el.nativeElement
+      const inputEl: Element = this.input.nativeElement
       if (!children || !children.length || !inputEl) return
       const inputWidth: number = inputEl.getBoundingClientRect().width
   

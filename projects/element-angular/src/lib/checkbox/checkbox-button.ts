@@ -30,7 +30,7 @@ import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
 })
 export class ElCheckboxButton implements OnInit, AfterViewInit {
   
-  @ViewChild('content') content: any
+  @ViewChild('content', { static: false }) content: ElementRef<HTMLElement>
   
   @Input() set disabled(val: boolean) {   // todo, is discarded.
     console.warn('Element Angular: (disabled) is discarded, use [elDisabled] replace it.')

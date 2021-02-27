@@ -10,7 +10,7 @@ import { TableColumn } from '../table.interface'
 })
 export class ElTableColumn implements OnInit {
   
-  @ContentChild('slot') slot: TemplateRef<any>
+  @ContentChild('slot', { static: true }) slot: TemplateRef<any>
   @Input('model-key') modelKey: string
   @Input('render-html') renderHTML: boolean = false
   @Input() label: string

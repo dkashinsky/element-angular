@@ -43,7 +43,7 @@ import { ElTableFormat } from './utils/format'
 })
 export class ElTable extends ElTableProps implements OnInit, OnDestroy, OnChanges, DoCheck {
   
-  @ViewChild('headerRef') headerRef: ElementRef
+  @ViewChild('headerRef', { static: true }) headerRef: ElementRef
   
   columnsData: TableColumnDataItem[][]
   columnsWithLevel: any[] = []

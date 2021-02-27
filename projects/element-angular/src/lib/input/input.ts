@@ -76,9 +76,9 @@ import { ElFormItem } from '../form/form-item'
 })
 export class ElInput extends ElInputPoprs implements OnInit, AfterViewInit, ControlValueAccessor {
   
-  @ContentChild('prepend') prepend: TemplateRef<any>
-  @ContentChild('append') append: TemplateRef<any>
-  @ViewChild('textarea') textarea: any
+  @ContentChild('prepend', { static: true }) prepend: TemplateRef<any>
+  @ContentChild('append', { static: true }) append: TemplateRef<any>
+  @ViewChild('textarea', { static: false }) textarea: ElementRef<HTMLTextAreaElement>
   textareaStyles: SafeStyle
   
   constructor(

@@ -44,8 +44,8 @@ import { dialogFadeAnimation } from '../shared/animation/dialog-fade.animation'
 })
 export class ElDialog extends ElDialogProps implements OnInit, OnChanges, OnDestroy {
   
-  @ContentChild('title') titleTmp: TemplateRef<any>
-  @ContentChild('footer') footerTmp: TemplateRef<any>
+  @ContentChild('title', { static: true }) titleTmp: TemplateRef<any>
+  @ContentChild('footer', { static: true }) footerTmp: TemplateRef<any>
   @Input() model: string | number
   
   cacheOverflow: string

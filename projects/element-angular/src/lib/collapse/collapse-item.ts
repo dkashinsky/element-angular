@@ -29,7 +29,7 @@ import { dropAnimation } from '../shared/animation/drop.animation'
 })
 export class ElCollapseItem implements OnInit {
   
-  @ContentChild('label') labelTmp: TemplateRef<any>
+  @ContentChild('label', { static: true }) labelTmp: TemplateRef<any>
   @Input() label: string
   @Input() value: ModelValue | null = null
   isActive: boolean = false
