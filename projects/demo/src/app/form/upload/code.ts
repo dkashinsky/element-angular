@@ -65,7 +65,7 @@ errorHandle(err: any): void {
 </el-upload>
 
 <el-dialog [(visible)]="showDialog" size="tiny">
-  <img width="100%" [src]="dialogImageUrl" alt="">
+  <img *ngIf="dialogImageUrl" width="100%" [src]="dialogImageUrl" alt="">
 </el-dialog>
 `,
 
