@@ -42,7 +42,7 @@ import { dropAnimation } from '../shared/animation/drop.animation'
 })
 export class ElDropdown extends ElDropdownProps implements OnDestroy, AfterViewInit {
   
-  @ViewChild('list', { read: ElementRef, static: false }) list: ElementRef<HTMLUListElement>;
+  @ViewChild('list', { read: ElementRef }) list: ElementRef<HTMLUListElement>;
   
   showMenu: boolean = false
   timer: any

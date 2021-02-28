@@ -16,7 +16,7 @@ export class ElUpload extends ElUploadProps implements OnInit {
   @ContentChild('trigger', { static: true }) trigger: TemplateRef<any>
   @ContentChild('dragger', { static: true }) dragger: TemplateRef<any>
   @ContentChild('tip', { static: true }) tip: TemplateRef<any>
-  @ViewChild('input', { static: false }) input: ElementRef
+  @ViewChild('input') input: ElementRef
   
   files: CommonFile[] = []
   

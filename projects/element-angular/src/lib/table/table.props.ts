@@ -1,6 +1,7 @@
-import { EventEmitter, Input, Output } from '@angular/core'
+import { EventEmitter, Input, Output, Directive } from '@angular/core'
 import { TableSelectEvent, ElTableSlotEvent } from './table.interface'
 
+@Directive()
 export class ElTableProps {
   
   @Input() height: string | number = 'auto'

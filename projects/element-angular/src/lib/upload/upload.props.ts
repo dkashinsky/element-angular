@@ -1,7 +1,8 @@
-import { EventEmitter, Input, Output } from '@angular/core'
+import { EventEmitter, Input, Output, Directive } from '@angular/core'
 import { HttpResponse } from '@angular/common/http'
 import { UploadFile, Lifecycle, CommonFile, UploadResponse } from './upload.interface'
 
+@Directive()
 export class ElUploadProps {
   
   @Input() set disabled(val: boolean) {   // todo, is discarded.

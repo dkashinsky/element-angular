@@ -10,7 +10,7 @@ import { ElLoadingDirective } from './loading.directive'
   entryComponents: [],
 })
 export class ElLoadingModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElLoadingModule> {
     return { ngModule: ElLoadingModule, providers: []}
   }
 }

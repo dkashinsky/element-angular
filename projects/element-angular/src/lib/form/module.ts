@@ -12,7 +12,7 @@ import { ElFormItem } from './form-item'
   entryComponents: [ElForm],
 })
 export class ElFormModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElFormModule> {
     return { ngModule: ElFormModule, providers: [] }
   }
 }

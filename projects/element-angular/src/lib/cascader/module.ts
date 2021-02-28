@@ -12,7 +12,7 @@ import { ElCascaderMenu } from './cascader.menu'
   entryComponents: [ElCascader],
 })
 export class ElCascaderModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElCascaderModule> {
     return { ngModule: ElCascaderModule, providers: [] }
   }
 }

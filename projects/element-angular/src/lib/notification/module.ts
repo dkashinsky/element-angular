@@ -10,7 +10,7 @@ import { ElNotificationService } from './notification.service'
   entryComponents: [ElNotificationContainer],
 })
 export class ElNotificationModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElNotificationModule> {
     return { ngModule: ElNotificationModule, providers: [
       ElNotificationService,
     ]}

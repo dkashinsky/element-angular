@@ -75,7 +75,7 @@ export const ELMODULES_GROUP: any[] = [
   exports: ELMODULES_GROUP,
 })
 class ElModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElModule> {
     return {
       ngModule: ElModule,
       providers: [],

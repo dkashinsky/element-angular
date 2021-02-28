@@ -30,7 +30,7 @@ import { HighLightPipe } from './pipe'
   entryComponents: [ExFooterNavComponent],
 })
 export class ExSharedModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ExSharedModule> {
     return { ngModule: ExSharedModule, providers: [] }
   }
 }

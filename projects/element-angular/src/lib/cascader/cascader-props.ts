@@ -1,4 +1,4 @@
-import { EventEmitter, Input, Output } from '@angular/core'
+import { EventEmitter, Input, Output, Directive } from '@angular/core'
 
 export type Option = {
   label?: string,
@@ -8,6 +8,7 @@ export type Option = {
   active?: boolean,
 }
 
+@Directive()
 export class ElCascaderPoprs {
   
   // input props

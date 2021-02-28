@@ -1,4 +1,4 @@
-import { EventEmitter, Input, Output } from '@angular/core'
+import { EventEmitter, Input, Output, Directive } from '@angular/core'
 import { ModelStandard } from './utils'
 
 export type ElTreeModelData = {
@@ -18,6 +18,7 @@ export type ElTreeModelEvent = {
   checked: boolean,
 }
 
+@Directive()
 export class ElTreeProps {
   
   identModel: ElTreeModelData[]

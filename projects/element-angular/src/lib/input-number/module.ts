@@ -11,7 +11,7 @@ import { ElInputNumber } from './input-number'
   entryComponents: [ElInputNumber],
 })
 export class ElInputNumberModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElInputNumberModule> {
     return { ngModule: ElInputNumberModule, providers: [] }
   }
 }

@@ -12,7 +12,7 @@ import { ElCheckboxGroup } from './checkbox-group'
   entryComponents: [ElCheckbox, ElCheckboxButton, ElCheckboxGroup],
 })
 export class ElCheckboxsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElCheckboxsModule> {
     return { ngModule: ElCheckboxsModule, providers: [] }
   }
 }

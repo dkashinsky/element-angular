@@ -11,7 +11,7 @@ import { ElSteps } from './steps'
   entryComponents: [ElStep, ElSteps],
 })
 export class ElStepsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElStepsModule> {
     return { ngModule: ElStepsModule, providers: [] }
   }
 }

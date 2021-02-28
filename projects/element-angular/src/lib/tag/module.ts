@@ -10,7 +10,7 @@ import { ElTag } from './tag'
   entryComponents: [ElTag],
 })
 export class ElTagsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElTagsModule> {
     return { ngModule: ElTagsModule, providers: [] }
   }
 }

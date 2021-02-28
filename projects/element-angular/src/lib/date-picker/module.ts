@@ -15,7 +15,7 @@ import { EMonthTable } from './children/month-table'
   entryComponents: [ElDataPicker],
 })
 export class ElDateModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElDateModule> {
     return { ngModule: ElDateModule, providers: [] }
   }
 }

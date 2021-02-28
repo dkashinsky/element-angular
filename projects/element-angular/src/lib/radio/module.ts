@@ -13,7 +13,7 @@ import { ElRadio } from './radio'
   entryComponents: [ElRadio, ElRadioGroup, ElRadioButton],
 })
 export class ElRadiosModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElRadiosModule> {
     return { ngModule: ElRadiosModule, providers: [] }
   }
 }

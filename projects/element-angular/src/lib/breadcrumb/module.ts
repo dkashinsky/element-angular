@@ -11,7 +11,7 @@ import { ElBreadcrumbItem } from './breadcrumb-item'
   entryComponents: [ElBreadcrumb],
 })
 export class ElBreadcrumbsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElBreadcrumbsModule> {
     return { ngModule: ElBreadcrumbsModule, providers: [] }
   }
 }

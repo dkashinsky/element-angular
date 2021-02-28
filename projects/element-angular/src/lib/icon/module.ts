@@ -10,7 +10,7 @@ import { ElIcon } from './icon'
   entryComponents: [ElIcon],
 })
 export class ElIconsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElIconsModule> {
     return { ngModule: ElIconsModule, providers: [] }
   }
 }

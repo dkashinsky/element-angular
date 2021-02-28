@@ -77,18 +77,6 @@
       span {
         opacity: .8;
       }
-      .nav-lang {
-        cursor: pointer;
-        display: inline-block;
-        height: 100%;
-        &:hover {
-          opacity: 1;
-        }
-        &.active {
-          font-weight: 700;
-          opacity: 1;
-        }
-      }
     }
     a {
       text-decoration: none;

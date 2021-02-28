@@ -1,7 +1,8 @@
 
 
-import { EventEmitter, Input, Output } from '@angular/core'
+import { EventEmitter, Input, Output, Directive } from '@angular/core'
 
+@Directive()
 export class ElDatePickerProps {
   
   @Input() readonly: boolean = false

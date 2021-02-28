@@ -35,7 +35,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 })
 export class ElCheckbox implements OnInit, AfterViewInit, OnChanges, ControlValueAccessor {
   
-  @ViewChild('content', { static: false }) content: ElementRef<HTMLElement>;
+  @ViewChild('content') content: ElementRef<HTMLElement>;
   
   @Input() set disabled(val: boolean) {   // todo, is discarded.
     console.warn('Element Angular: (disabled) is discarded, use [elDisabled] replace it.')

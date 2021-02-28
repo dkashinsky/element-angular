@@ -1,6 +1,7 @@
-import { EventEmitter, Input, Output } from '@angular/core'
+import { EventEmitter, Input, Output, Directive } from '@angular/core'
 export type AutoSize = { minRows: number, maxRows: number }
 
+@Directive()
 export class ElInputProps {
   
   @Input() type: string = 'text'      // input type. enum: text/textarea

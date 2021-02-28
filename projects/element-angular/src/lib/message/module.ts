@@ -10,7 +10,7 @@ import { ElMessageService } from './message.service'
   entryComponents: [ElMessageContainer],
 })
 export class ElMessagesModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElMessagesModule> {
     return { ngModule: ElMessagesModule, providers: [
       ElMessageService,
     ]}

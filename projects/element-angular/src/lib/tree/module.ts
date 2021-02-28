@@ -11,7 +11,7 @@ import { ElCheckboxsModule } from '../checkbox/module'
   entryComponents: [ElTree],
 })
 export class ElTreeModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElTreeModule> {
     return { ngModule: ElTreeModule, providers: []}
   }
 }

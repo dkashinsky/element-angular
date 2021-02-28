@@ -12,7 +12,7 @@ import { ElDropdown } from './dropdown'
   entryComponents: [ElDropdown],
 })
 export class ElDropdownModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElDropdownModule> {
     return { ngModule: ElDropdownModule, providers: [] }
   }
 }

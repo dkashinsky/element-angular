@@ -12,7 +12,7 @@ export function getWindow(): any { return window }
   entryComponents: [ElDialog],
 })
 export class ElDialogModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElDialogModule> {
     return { ngModule: ElDialogModule, providers: [] }
   }
 }

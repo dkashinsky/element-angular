@@ -22,7 +22,7 @@ import { ElPaginationJump } from './children/jump'
   entryComponents: [ElPagination],
 })
 export class ElPaginationModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElPaginationModule> {
     return { ngModule: ElPaginationModule, providers: [] }
   }
 }

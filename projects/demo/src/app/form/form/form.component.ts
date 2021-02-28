@@ -11,7 +11,7 @@ type validateResult = {
   selector: 'ex-form-demo',
   template: ` `,
 })
-export class ExFormComponentDemo implements OnInit {
+class ExFormComponentDemo implements OnInit {
   
   labelPosition: string = 'left'
   validateForm: FormGroup

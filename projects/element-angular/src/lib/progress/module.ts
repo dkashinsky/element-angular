@@ -10,7 +10,7 @@ import { Elprogress } from './progress'
   entryComponents: [Elprogress],
 })
 export class ElProgressModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElProgressModule> {
     return { ngModule: ElProgressModule, providers: [] }
   }
 }

@@ -10,7 +10,7 @@ import { ElColDirective } from './col.directive'
   entryComponents: [],
 })
 export class ElColModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElColModule> {
     return { ngModule: ElColModule, providers: [] }
   }
 }
