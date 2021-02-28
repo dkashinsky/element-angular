@@ -50,7 +50,7 @@
     "element-ui": "2.0.7",
     "gh-pages": "^1.0.0",
     "gulp": "^4.0.2",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^10.4.1",
     "husky": "^0.14.3",
     "i": "^0.3.5",
     "jsdom": "^11.2.0",
