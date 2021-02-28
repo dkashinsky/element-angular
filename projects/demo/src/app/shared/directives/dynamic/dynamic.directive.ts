@@ -1,6 +1,6 @@
 import {
   Input, Directive, OnInit, Compiler, Component,
-  ModuleWithComponentFactories, NgModule, ReflectiveInjector, ViewContainerRef, ComponentRef,
+  ModuleWithComponentFactories, NgModule, ViewContainerRef, ComponentRef, Type, ComponentFactory, OnDestroy,
 } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
@@ -12,12 +12,12 @@ import { ElModule } from '@fsdk/element-angular'
 @Directive({
   selector: '[ex-dynamic]',
 })
-export class ElDynamicDirective implements OnInit {
+export class ElDynamicDirective implements OnInit, OnDestroy {
   
   @Input('ex-dynamic') dynamicHtml: string
   @Input('class') parentClass: new ([string]?: any) => {} = class {}
   
-  comRef: ComponentRef<any>
+  compRef: ComponentRef<any>
   
   constructor(
     private vcRef: ViewContainerRef,
@@ -27,25 +27,33 @@ export class ElDynamicDirective implements OnInit {
   
   ngOnInit(): void {
     if (!this.dynamicHtml) return
-    const decorated: any = Component(new Component({
+
+    const component = Component({
       selector: 'ex-dynamic-html',
       template: this.dynamicHtml,
-    }))(class DynamicComponent extends this.parentClass {})
-  
-    @NgModule({
+    })(class DynamicComponent extends this.parentClass {});
+
+    const module = NgModule({
       imports: [CommonModule, RouterModule, ElModule, FormsModule, ReactiveFormsModule],
-      declarations: [decorated],
-    })
-    class DynamicModule {}
+      declarations: [component],
+    })(class DynamicModule {});
   
-    this.compiler.compileModuleAndAllComponentsAsync(DynamicModule)
-      .then((moduleWithComponentFactory: ModuleWithComponentFactories<any>) =>
-        moduleWithComponentFactory.componentFactories.find(x =>
-          x.componentType === decorated))
-      .then(factory => {
-        const injector = ReflectiveInjector.fromResolvedProviders([], this.vcRef.parentInjector)
-        this.comRef = this.vcRef.createComponent(factory, 0 , injector)
-      })
+    this.compiler.compileModuleAndAllComponentsAsync(module)
+      .then(compiledModule => this.getComponentFactory(compiledModule, component))
+      .then(componentFactory => this.initComponent(componentFactory));
+  }
+
+  ngOnDestroy(): void {
+    if (this.compRef && this.compRef.destroy) {
+      this.compRef.destroy();
+    }
   }
   
+  private getComponentFactory(module: ModuleWithComponentFactories<any>, componentType: Type<any>) {
+    return module.componentFactories.find(x => x.componentType === componentType);
+  }
+
+  private initComponent(componentFactory: ComponentFactory<any>): void {
+    this.compRef = this.vcRef.createComponent(componentFactory)
+  }
 }

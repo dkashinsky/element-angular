@@ -13,18 +13,13 @@
       </h1>
       <ul class="nav">
         <li class="nav-item">
-          <a [class.active]="isGuide" [routerLink]="['/guide/install']" i18n="@@header-nav-item1">开发指南</a>
+          <a [class.active]="isGuide" [routerLink]="['/guide/install']" i18n="@@header-nav-item1">Installation Guide</a>
         </li>
         <li class="nav-item">
-          <a [class.active]="!isGuide" [routerLink]="['/basic/layout']" i18n="@@header-nav-item2">组件</a>
+          <a [class.active]="!isGuide" [routerLink]="['/basic/layout']" i18n="@@header-nav-item2">Components</a>
         </li>
         <li class="nav-item">
-          <a href="https://github.com/ElemeFE/element-angular" target="_blank" i18n="@@header-nav-item3">项目</a>
-        </li>
-        <li class="nav-item">
-          <span class="nav-lang" [class.active]="locale === 'zh-CN'" (click)="changeLang('zh-CN')">中文</span>
-          <span> / </span>
-          <span class="nav-lang" [class.active]="locale === 'en-US'" (click)="changeLang('en-US')">En</span>
+          <a href="https://github.com/dkashinsky/element-angular" target="_blank" i18n="@@header-nav-item3">Project</a>
         </li>
       </ul>
     </div>
