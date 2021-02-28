@@ -1,6 +1,6 @@
 {
   "name": "@fsdk/element-angular",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "element ui for angular",
   "private": true,
   "scripts": {
@@ -40,7 +40,6 @@
     "@angular/platform-server": "^9.1.13",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@types/highlight.js": "^9.1.9",
     "@types/node": "^12.11.1",
     "@types/webpack": "^3.0.9",
     "app-root-path": "^2.0.1",
@@ -50,7 +49,7 @@
     "element-ui": "2.0.7",
     "gh-pages": "^1.0.0",
     "gulp": "^4.0.2",
-    "highlight.js": "^9.12.0",
+    "highlight.js": "^10.6.0",
     "husky": "^0.14.3",
     "i": "^0.3.5",
     "jsdom": "^11.2.0",
