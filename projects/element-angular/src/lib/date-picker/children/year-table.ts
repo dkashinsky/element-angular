@@ -20,7 +20,6 @@ export class ElYearTable implements OnInit, OnChanges {
   
   @Input() showWeekNumber: boolean = false
   @Input() model: number
-  @Input('disabled-date') disabledDate: any
   @Output() modelChange: EventEmitter<number> = new EventEmitter<number>()
   
   date: Date

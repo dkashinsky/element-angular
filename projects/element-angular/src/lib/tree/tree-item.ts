@@ -8,31 +8,7 @@ import { dropAnimation } from '../shared/animation/drop.animation'
 @Component({
   selector: 'el-tree-item',
   animations: [dropAnimation],
-  
-  template: `
-    <div class="el-tree-node" (click)="clickHandle($event)"
-      [class.is-focusable]="!root.elDisabled"
-      [class.is-checked]="!root.elDisabled && model.checked"
-      role="treeitem">
-      <div class="el-tree-node__content"
-        [ngStyle]="{ 'padding-left': (model._level - 1) * indent + 'px' }">
-        <span class="el-tree-node__expand-icon el-icon-caret-right"
-          [class.expanded]="model.expanded"
-          [class.is-leaf]="isLeaf()"
-          (click)="iconClickHandle($event)"></span>
-        <el-checkbox *ngIf="root.showCheckbox" [model]="model.checked" [indeterminate]="model._indeterminate"
-          [elDisabled]="root.elDisabled"
-          (modelChange)="checkHandle($event)">
-        </el-checkbox>
-        <span class="el-tree-node__label">{{ model.label }}</span>
-      </div>
-      <div class="el-tree-node__children" *ngIf="!isLeaf()" [@dropAnimation]="model.expanded">
-        <el-tree-item *ngFor="let item of model.children"
-          [model]="item" [indent]="indent">
-        </el-tree-item>
-      </div>
-    </div>
-  `,
+  templateUrl: './tree-item.html',
 })
 export class ElTreeItem {
   

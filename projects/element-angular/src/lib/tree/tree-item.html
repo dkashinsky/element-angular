@@ -1,0 +1,36 @@
+<div 
+  class="el-tree-node" 
+  [class.is-focusable]="!root.elDisabled"
+  [class.is-checked]="!root.elDisabled && model.checked"
+  role="treeitem"
+  (click)="clickHandle($event)"
+>
+  <div 
+    class="el-tree-node__content"
+    [ngStyle]="{ 'padding-left': (model._level - 1) * indent + 'px' }"
+  >
+    <span 
+      class="el-tree-node__expand-icon el-icon-caret-right"
+      [class.expanded]="model.expanded"
+      [class.is-leaf]="isLeaf()"
+      (click)="iconClickHandle($event)"
+    ></span>
+    <el-checkbox 
+      *ngIf="root.showCheckbox" 
+      [model]="model.checked" 
+      [indeterminate]="model._indeterminate"
+      [elDisabled]="root.elDisabled"
+      (modelChange)="checkHandle()"
+    ></el-checkbox>
+    <span class="el-tree-node__label">{{ model.label }}</span>
+  </div>
+  <div 
+    *ngIf="!isLeaf()" 
+    class="el-tree-node__children" 
+    [@dropAnimation]="model.expanded"
+  >
+    <el-tree-item *ngFor="let item of model.children"
+      [model]="item" [indent]="indent">
+    </el-tree-item>
+  </div>
+</div>

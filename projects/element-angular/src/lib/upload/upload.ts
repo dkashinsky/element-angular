@@ -10,47 +10,9 @@ import { CommonFile, UploadFile } from './upload.interface'
 
 @Component({
   selector: 'el-upload',
-  template: `
-    <ng-template #uploadList>
-      <el-upload-list [files]="files"  *ngIf="showFileList"
-        [list-type]="listType" [elDisabled]="elDisabled"
-        (remove)="removeHandle($event)" (preview)="lifecycle.preview($event)">
-      </el-upload-list>
-    </ng-template>
-    
-    <ng-template #triggerBlock>
-      <div [class]="'el-upload el-upload--' + listType" (click)="clickHandle()">
-        <el-button *ngIf="!trigger" size="small" type="primary">点击上传</el-button>
-        <ng-container *ngIf="trigger">
-          <ng-template [ngTemplateOutlet]="trigger"></ng-template>
-        </ng-container>
-        <input class="el-upload__input" type="file" name="file" #input
-          [accept]="accept" [name]="name" [multiple]="multiple"
-          (change)="changeHandle($event)">
-      </div>
-    </ng-template>
-    
-    <el-upload-dragger *ngIf="drag" [elDisabled]="elDisabled" (change)="changeHandle($event)">
-      <ng-template [ngTemplateOutlet]="triggerBlock"></ng-template>
-    </el-upload-dragger>
-    
-    <ng-container *ngIf="listType === 'picture-card'">
-      <ng-template [ngTemplateOutlet]="uploadList"></ng-template>
-    </ng-container>
-    <ng-container *ngIf="!drag">
-      <ng-template [ngTemplateOutlet]="triggerBlock"></ng-template>
-    </ng-container>
-    
-    <ng-container *ngIf="tip">
-      <ng-template [ngTemplateOutlet]="tip"></ng-template>
-    </ng-container>
-    <ng-container *ngIf="listType !== 'picture-card'">
-      <ng-template [ngTemplateOutlet]="uploadList"></ng-template>
-    </ng-container>
-  `,
+  templateUrl: './upload.html',
 })
 export class ElUpload extends ElUploadProps implements OnInit {
-  
   @ContentChild('trigger', { static: true }) trigger: TemplateRef<any>
   @ContentChild('dragger', { static: true }) dragger: TemplateRef<any>
   @ContentChild('tip', { static: true }) tip: TemplateRef<any>
@@ -122,6 +84,10 @@ export class ElUpload extends ElUploadProps implements OnInit {
     this.lifecycle.remove(file)
     const index = this.files.findIndex(({ id }) => file.id === id)
     this.files.splice(index, 1)
+  }
+
+  previewHandle(file: CommonFile): void {
+    this.lifecycle.preview(file);
   }
   
   updateFile(file: CommonFile): void {

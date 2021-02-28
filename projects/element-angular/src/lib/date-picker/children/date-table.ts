@@ -38,7 +38,6 @@ export type DateRow = DateRowItem[]
 export class ElDateTable implements OnInit, OnChanges {
   
   @Input() model: number
-  @Input('disabled-date') disabledDate: any
   @Output() modelChange: EventEmitter<any> = new EventEmitter<any>()
   
   weeks: string[] = ['日', '一', '二', '三', '四', '五', '六']

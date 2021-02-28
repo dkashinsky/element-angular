@@ -3,7 +3,7 @@ import {
   ViewChild,
 } from '@angular/core'
 import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
-import { ElInputPoprs } from './input-props'
+import { ElInputProps } from './input-props'
 import { getTextareaHeight } from './help'
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 import { isParentTag } from '../shared/utils'
@@ -19,62 +19,9 @@ import { ElFormItem } from '../form/form-item'
     useExisting: forwardRef(() => ElInput),
     multi: true
   }],
-  template: `
-    <div [class]="(type === 'text' ? 'el-input' : 'el-textarea') +
-    (size ? ' el-input--' + size : '') + ' ' + parentClass"
-      [class.is-disabled]="elDisabled"
-      [class.el-input-group]="prepend || append"
-      [class.el-input-group--append]="append"
-      [class.el-input-group--prepend]="prepend">
-      <ng-container *ngIf="type === 'text'">
-        
-        <div class="el-input-group__prepend" *ngIf="prepend">
-          <ng-template [ngTemplateOutlet]="prepend">
-          </ng-template>
-        </div>
-        
-        <span class="el-input__suffix" *ngIf="icon" (click)="iconClick.emit($event)"
-          (mouseenter)="iconMouseEnter.emit($event)" (mouseleave)="iconMouseLeave.emit($event)"
-          (mousedown)="iconMousedown.emit($event)" (mouseup)="iconMouseup.emit($event)"
-          [class.icon-pointer]="showPointer()"
-          [class.icon-disabled]="elDisabled">
-          <span class="el-input__suffix-inner">
-            <i [class]="'el-input__icon ' + ('el-icon-' + icon) + (iconClick ? ' is-clickable ' : ' ')
-              + (iconClass ? iconClass : '')"
-              [attr.disabled]="elDisabled"
-              [class.icon-disabled]="elDisabled"
-              *ngIf="icon"></i>
-          </span>
-        </span>
-        <input class="el-input__inner"
-          [autocomplete]="autoComplete" [value]="value" [name]="name" [type]="nativeType"
-          [placeholder]="placeholder" [autofocus]="autofocus"
-          [disabled]="elDisabled" [readonly]="readonly"
-          [maxlength]="maxlength" [minlength]="minlength"
-          [ngModel]="model" (ngModelChange)="handleInput($event)"
-          (focus)="focus.emit($event)" (blur)="blur.emit($event)">
-        <i *ngIf="validating" class="el-input__icon el-icon-loading"></i>
-        
-        <div class="el-input-group__append" *ngIf="append">
-          <ng-template [ngTemplateOutlet]="append">
-          </ng-template>
-        </div>
-      </ng-container>
-      
-      <ng-container *ngIf="type === 'textarea'">
-        <textarea class="el-textarea__inner" #textarea
-          [style]="textareaStyles"
-          [value]="value" [name]="name"
-          [placeholder]="placeholder" [autofocus]="autofocus"
-          [disabled]="elDisabled" [readonly]="readonly"
-          [maxlength]="maxlength" [minlength]="minlength"
-          [ngModel]="model" (input)="handleInput($event.target.value)"
-          (focus)="focus.emit($event)" (blur)="blur.emit($event)"></textarea>
-      </ng-container>
-    </div>
-  `,
+  templateUrl: './input.html',
 })
-export class ElInput extends ElInputPoprs implements OnInit, AfterViewInit, ControlValueAccessor {
+export class ElInput extends ElInputProps implements OnInit, AfterViewInit, ControlValueAccessor {
   
   @ContentChild('prepend', { static: true }) prepend: TemplateRef<any>
   @ContentChild('append', { static: true }) append: TemplateRef<any>

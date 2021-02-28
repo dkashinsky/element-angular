@@ -1,0 +1,82 @@
+<div 
+  [@dropAnimation]="show"
+  [ngStyle]="{ width: width ? width + 'px' : 'auto', 'z-index': panelIndex }"
+  [class]="'el-picker-panel el-date-picker '"
+  [class.has-time]="showTime"
+  [class.el-picker-panel-absolute]="panelAbsolute"
+>
+  <div class="el-picker-panel__body-wrapper">
+    <!--<div class="el-picker-panel__sidebar" *ngIf="shortcuts">-->
+      <!--<button type="button" class="el-picker-panel__shortcut"-->
+        <!--*ngFor="shortcut in shortcuts"-->
+        <!--(click)="handleShortcutClick(shortcut)">-->
+        <!--{{ shortcut.text }}-->
+      <!--</button>-->
+    <!--</div>-->
+    <div class="el-picker-panel__body">
+      <div class="el-date-picker__header">
+        <button 
+          class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-d-arrow-left"
+          type="button" 
+          (click)="nextYear(-1)"
+        ></button>
+        <button 
+          *ngIf="currentView === 'date'"
+          class="el-picker-panel__icon-btn el-date-picker__prev-btn el-icon-arrow-left"
+          type="button" 
+          (click)="nextMonth(-1)"
+        ></button>
+        
+        <!--year label-->
+        <span 
+          *ngIf="currentView !== 'year'"
+          class="el-date-picker__header-label" 
+          (click)="showPicker('year')"
+        >
+          {{dateShowModels.year}} 年
+        </span>
+        <!--year range label-->
+        <span class="el-date-picker__header-label" *ngIf="currentView === 'year'">
+          {{dateShowModels.yearRange[0]}} 年 - {{dateShowModels.yearRange[1]}} 年
+        </span>
+        
+        <span 
+          *ngIf="currentView === 'date'"
+          class="el-date-picker__header-label"
+          (click)="showPicker('month')"
+        >
+          {{dateShowModels.month + 1}} 月
+        </span>
+        <button class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-d-arrow-right"
+          type="button" (click)="nextYear(1)">
+        </button>
+        <button class="el-picker-panel__icon-btn el-date-picker__next-btn el-icon-arrow-right"
+          type="button" (click)="nextMonth(1)"
+          *ngIf="currentView === 'date'">
+        </button>
+      </div>
+      <div class="el-picker-panel__content">
+        <el-date-table 
+          *ngIf="currentView === 'date' && !hiddenDay"
+          [model]="model"
+          (modelChange)="datePickChangeHandle($event)"
+        ></el-date-table>
+        <el-year-table 
+          *ngIf="currentView === 'year'"
+          [model]="model"
+          (modelChange)="yearPickChangeHandle($event)"
+        ></el-year-table>
+        <el-month-table 
+          *ngIf="currentView === 'month'"
+          [model]="model"
+          (modelChange)="monthPickChangeHandle($event)"
+        ></el-month-table>
+      </div>
+    </div>
+  </div>
+  <!--<div class="el-picker-panel__footer" *ngIf="footerVisible && currentView === 'date'">-->
+    <!--<a href="JavaScript:" class="el-picker-panel__link-btn" (click)="changeToNow()">556</a>-->
+    <!--<button class="el-picker-panel__btn" type="button"-->
+      <!--(click)="confirm()">667</button>-->
+  <!--</div>-->
+</div>

@@ -20,8 +20,6 @@ export class ElDatePickerProps {
   @Input('panel-index') panelIndex: number = 200
   @Input('panel-width') panelWidth: number
   
-  // @Input() disabledDateFilter: Function
-  
   @Input() model: string
   @Output() modelChange: EventEmitter<string> = new EventEmitter<string>()
   @Output('clear-click') clearClick: EventEmitter<Event> = new EventEmitter<Event>()
