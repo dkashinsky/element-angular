@@ -1,7 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { ElCarousel } from './carousel'
-import { ElCarouselItem } from './carousel-item'
+import { ElCarousel, ElCarouselItem } from './carousel'
 
 
 @NgModule({

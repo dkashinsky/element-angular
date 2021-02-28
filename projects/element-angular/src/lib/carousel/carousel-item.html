@@ -1,0 +1,11 @@
+<div 
+  class="el-carousel__item"
+  [class.is-active]="isActive"
+  [class.el-carousel__item--card]="root.type === 'card'"
+  [class.is-animating]="isAnimating"
+  [style]="styles">
+  <!--<div class="el-carousel__mask" *ngIf="root.type === 'card'"-->
+    <!--[@fadeAnimation]="isActive()">-->
+  <!--</div>-->
+  <ng-content></ng-content>
+</div>

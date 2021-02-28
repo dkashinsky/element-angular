@@ -3,7 +3,6 @@
   "version": "0.8.0",
   "description": "element ui for angular",
   "keywords": [
-    "element",
     "element ui",
     "angular",
     "typescript"
@@ -20,6 +19,7 @@
   "peerDependencies": {
     "@angular/animation": "^8.0.0",
     "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0"
+    "@angular/core": "^8.0.0",
+    "@angular/platform-browser": "^8.0.0"
   }
 }

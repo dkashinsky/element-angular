@@ -1,54 +1,17 @@
 import {
-  AfterContentChecked, Component, ContentChildren, forwardRef,
-  OnChanges, OnDestroy, QueryList, SimpleChanges,
+  AfterContentChecked, Component, ContentChildren, ElementRef, forwardRef,
+  Inject, Input, OnChanges, OnDestroy, OnInit, QueryList, SimpleChanges,
 } from '@angular/core'
-import { ElCarouselItem } from './carousel-item'
 import { ElCarouselProps } from './carousel-props'
 import { carouselBtnLeftAnimation, carouselBtnRightAnimation } from './animations'
+import { removeNgTag } from '../shared/utils'
+import { DomSanitizer, SafeStyle } from '@angular/platform-browser'
+import { fadeAnimation } from '../shared/animation/fade.animation'
 
 @Component({
   selector: 'el-carousel',
   animations: [carouselBtnLeftAnimation, carouselBtnRightAnimation],
-  template: `
-    <div class="el-carousel"
-      #carousel
-      [class.el-carousel--card]="type === 'card'"
-      (mouseenter)="carousel.hover = true"
-      (mouseleave)="carousel.hover = false">
-      <div class="el-carousel__container" [ngStyle]="{height: height}">
-        <button class="el-carousel__arrow el-carousel__arrow--left"
-          #leftBtn
-          *ngIf="arrow !== 'never'"
-          [@carouselBtnLeftAnimation]="arrow === 'always' || carousel.hover"
-          (mouseenter)="btnActionHandle(model - 1,'hover')"
-          (click)="btnActionHandle(model - 1, 'click')">
-          <i class="el-icon-arrow-left"></i>
-        </button>
-        <button class="el-carousel__arrow el-carousel__arrow--right"
-          #rightBtn
-          *ngIf="arrow !== 'never'"
-          [@carouselBtnRightAnimation]="arrow === 'always' || carousel.hover"
-          (mouseenter)="btnActionHandle(model + 1, 'hover')"
-          (click)="btnActionHandle(model + 1, 'click')">
-          <i class="el-icon-arrow-right"></i>
-        </button>
-        <ng-content></ng-content>
-      </div>
-      <ul class="el-carousel__indicators" *ngIf="indicatorPosition !== 'none'"
-        [class.el-carousel__indicators--labels]="hasLabel"
-        [class.el-carousel__indicators--outside]="indicatorPosition === 'outside' || type === 'card'">
-        <li *ngFor="let item of items; let i = index"
-          class="el-carousel__indicator"
-          [class.is-active]="i === model"
-          (mouseenter)="indicatorActionHandle(i, 'hover')"
-          (click)="indicatorActionHandle(i, 'click')">
-          <button class="el-carousel__button">
-            <span *ngIf="hasLabel">{{item}}</span>
-          </button>
-        </li>
-      </ul>
-    </div>
-  `,
+  templateUrl: './carousel.html',
 })
 export class ElCarousel extends ElCarouselProps implements AfterContentChecked, OnChanges, OnDestroy {
   
@@ -117,4 +80,74 @@ export class ElCarousel extends ElCarouselProps implements AfterContentChecked, 
     this.timer && clearInterval(this.timer)
   }
 
+}
+
+@Component({
+  selector: 'el-carousel-item',
+  animations: [fadeAnimation],
+  templateUrl: './carousel-item.html',
+})
+export class ElCarouselItem implements OnInit {
+  
+  // parent component will set index
+  @Input() index: number
+  @Input() label: string = ''
+  
+  // oninit set
+  width: number
+  
+  preTranslate: number
+  isAnimating: boolean
+  isActive: boolean = false
+  styles: SafeStyle
+  
+  constructor(
+    @Inject(forwardRef(() => ElCarousel)) public root: ElCarousel,
+    private sanitizer: DomSanitizer,
+    private el: ElementRef,
+  ) {
+  }
+  
+  updateActive(): void {
+    const isActive: boolean = this.root.model === this.index
+    if (this.isActive !== isActive) {
+      this.isActive = isActive
+    }
+  }
+  
+  updateStyles(): void {
+    const map: any = {
+      '1': 0 - this.width,
+      '-1': this.width,
+      '2': this.width,
+      '-2': 0 - this.width,
+      '0': 0,
+    }
+    const offset: number = this.root.model - this.index
+    const translate = map[offset]
+    const styles: string = `transform: translateX(${translate}px);`
+    // change direction disable animation
+    const changeDirection: boolean = (this.preTranslate < 0 && translate > 0)
+      || (this.preTranslate > 0 && translate < 0)
+    this.isAnimating = !changeDirection
+    this.styles = this.sanitizer.bypassSecurityTrustStyle(styles)
+    // save current value
+    this.preTranslate = translate
+  }
+  
+  update(): void {
+    this.updateStyles()
+    this.updateActive()
+  }
+  
+  ngOnInit(): void {
+    // collect items
+    this.root.items.push(this.label)
+    this.width = this.el.nativeElement.children[0].offsetWidth
+    removeNgTag(this.el.nativeElement)
+    
+    // manually update
+    this.root.subscriber.push(() => this.update())
+    this.update()
+  }
 }

@@ -1,0 +1,38 @@
+<div class="el-carousel"
+  #carousel
+  [class.el-carousel--card]="type === 'card'"
+  (mouseenter)="carousel.hover = true"
+  (mouseleave)="carousel.hover = false">
+  <div class="el-carousel__container" [ngStyle]="{height: height}">
+    <button class="el-carousel__arrow el-carousel__arrow--left"
+      #leftBtn
+      *ngIf="arrow !== 'never'"
+      [@carouselBtnLeftAnimation]="arrow === 'always' || carousel.hover"
+      (mouseenter)="btnActionHandle(model - 1,'hover')"
+      (click)="btnActionHandle(model - 1, 'click')">
+      <i class="el-icon-arrow-left"></i>
+    </button>
+    <button class="el-carousel__arrow el-carousel__arrow--right"
+      #rightBtn
+      *ngIf="arrow !== 'never'"
+      [@carouselBtnRightAnimation]="arrow === 'always' || carousel.hover"
+      (mouseenter)="btnActionHandle(model + 1, 'hover')"
+      (click)="btnActionHandle(model + 1, 'click')">
+      <i class="el-icon-arrow-right"></i>
+    </button>
+    <ng-content></ng-content>
+  </div>
+  <ul class="el-carousel__indicators" *ngIf="indicatorPosition !== 'none'"
+    [class.el-carousel__indicators--labels]="hasLabel"
+    [class.el-carousel__indicators--outside]="indicatorPosition === 'outside' || type === 'card'">
+    <li *ngFor="let item of items; let i = index"
+      class="el-carousel__indicator"
+      [class.is-active]="i === model"
+      (mouseenter)="indicatorActionHandle(i, 'hover')"
+      (click)="indicatorActionHandle(i, 'click')">
+      <button class="el-carousel__button">
+        <span *ngIf="hasLabel">{{item}}</span>
+      </button>
+    </li>
+  </ul>
+</div>
