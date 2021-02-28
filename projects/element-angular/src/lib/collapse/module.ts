@@ -11,7 +11,7 @@ import { ElCollapseItem } from './collapse-item'
   entryComponents: [ElCollapse],
 })
 export class ElCollapseModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElCollapseModule> {
     return { ngModule: ElCollapseModule, providers: [] }
   }
 }

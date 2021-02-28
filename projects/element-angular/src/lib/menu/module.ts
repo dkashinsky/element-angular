@@ -14,7 +14,7 @@ import { ElMenu } from './menu'
   entryComponents: [ElMenu, ElSubmenu, ElMenuItem, ElMenuItemGroup],
 })
 export class ElMenusModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElMenusModule> {
     return { ngModule: ElMenusModule, providers: [] }
   }
 }

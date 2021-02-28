@@ -12,7 +12,7 @@ import { ElSlider } from './slider'
   entryComponents: [ElSlider],
 })
 export class ElSliderModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElSliderModule> {
     return { ngModule: ElSliderModule, providers: [] }
   }
 }

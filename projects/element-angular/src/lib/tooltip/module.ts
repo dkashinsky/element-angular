@@ -12,7 +12,7 @@ export function getWindow(): any { return window }
   entryComponents: [ElTooltip],
 })
 export class ElTooltipModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElTooltipModule> {
     return { ngModule: ElTooltipModule, providers: []}
   }
 }

@@ -1,8 +1,9 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core'
+import { AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation, Directive } from '@angular/core'
 import code from './code'
 
+@Directive()
 class DemoClass implements AfterViewInit {
-  @ViewChild('tree', {static: false }) tree: ElementRef
+  @ViewChild('tree') tree: ElementRef
   hooks: any;
   
   data: any = [{

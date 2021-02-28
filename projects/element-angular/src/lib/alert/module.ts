@@ -10,7 +10,7 @@ import { ElAlert } from './alert'
   entryComponents: [ElAlert],
 })
 export class ElAlertModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElAlertModule> {
     return { ngModule: ElAlertModule, providers: [] }
   }
 }

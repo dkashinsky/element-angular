@@ -10,7 +10,7 @@ import { ElRate } from './rate'
   entryComponents: [ElRate],
 })
 export class ElRateModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElRateModule> {
     return { ngModule: ElRateModule, providers: [] }
   }
 }

@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms'
   entryComponents: [ElSwitch],
 })
 export class ElSwitchModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElSwitchModule> {
     return { ngModule: ElSwitchModule, providers: [] }
   }
 }

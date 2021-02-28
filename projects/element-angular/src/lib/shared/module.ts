@@ -19,7 +19,7 @@ export function getWindow(): any { return window }
   entryComponents: [],
 })
 export class ElSharedModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElSharedModule> {
     return { ngModule: ElSharedModule, providers: [
       ExDynamicService,
       ElCSSValuePipe,

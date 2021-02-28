@@ -41,7 +41,7 @@ import { ElAsideDirective } from './directives/aside.directive'
   entryComponents: [ElContainer],
 })
 export class ElContainerModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElContainerModule> {
     return { ngModule: ElContainerModule, providers: [] }
   }
 }

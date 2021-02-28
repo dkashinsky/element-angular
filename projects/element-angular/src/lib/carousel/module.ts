@@ -10,7 +10,7 @@ import { ElCarousel, ElCarouselItem } from './carousel'
   entryComponents: [ElCarousel],
 })
 export class ElCarouselModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElCarouselModule> {
     return { ngModule: ElCarouselModule, providers: [] }
   }
 }

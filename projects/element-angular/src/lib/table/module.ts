@@ -22,7 +22,7 @@ import { ElTableBody } from './children/body'
   entryComponents: [ElTable],
 })
 export class ElTableModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElTableModule> {
     return { ngModule: ElTableModule, providers: [ElTableFormat] }
   }
 }

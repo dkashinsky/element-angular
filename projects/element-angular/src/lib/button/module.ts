@@ -11,7 +11,7 @@ import { ElButtonGroup } from './button-group'
   entryComponents: [ElButton, ElButtonGroup],
 })
 export class ElButtonsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElButtonsModule> {
     return { ngModule: ElButtonsModule, providers: [] }
   }
 }

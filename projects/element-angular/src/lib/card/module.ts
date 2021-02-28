@@ -10,7 +10,7 @@ import { ElCard } from './card'
   entryComponents: [ElCard],
 })
 export class ElCardsModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElCardsModule> {
     return { ngModule: ElCardsModule, providers: [] }
   }
 }

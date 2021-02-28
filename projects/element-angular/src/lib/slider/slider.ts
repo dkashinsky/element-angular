@@ -28,7 +28,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms'
 })
 export class ElSlider extends ElSliderProps implements OnInit, AfterViewInit, ControlValueAccessor {
   
-  @ViewChild('runway', { static: false }) runwayElement: ElementRef
+  @ViewChild('runway') runwayElement: ElementRef
   size: number
   
   start: number = 0

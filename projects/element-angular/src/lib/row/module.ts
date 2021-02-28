@@ -10,7 +10,7 @@ import { ElRowDirective } from './row.directive'
   entryComponents: [],
 })
 export class ElRowModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElRowModule> {
     return { ngModule: ElRowModule, providers: [] }
   }
 }

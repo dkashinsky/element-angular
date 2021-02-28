@@ -15,7 +15,7 @@ import { ElSelect } from './select'
   entryComponents: [ElSelectDropdown, ElOption, ElSelect],
 })
 export class ElSelectModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ElSelectModule> {
     return { ngModule: ElSelectModule, providers: [] }
   }
 }

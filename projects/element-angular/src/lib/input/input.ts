@@ -25,7 +25,7 @@ export class ElInput extends ElInputProps implements OnInit, AfterViewInit, Cont
   
   @ContentChild('prepend', { static: true }) prepend: TemplateRef<any>
   @ContentChild('append', { static: true }) append: TemplateRef<any>
-  @ViewChild('textarea', { static: false }) textarea: ElementRef<HTMLTextAreaElement>
+  @ViewChild('textarea') textarea: ElementRef<HTMLTextAreaElement>
   textareaStyles: SafeStyle
   
   constructor(
