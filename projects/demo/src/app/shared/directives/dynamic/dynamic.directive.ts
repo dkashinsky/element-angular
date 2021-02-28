@@ -8,9 +8,11 @@ import { RouterModule } from '@angular/router'
 // Rendering ElComponent dependence
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { ElModule } from '@fsdk/element-angular'
+import { createJitCompiler } from './dynamic.compiler'
 
 @Directive({
   selector: '[ex-dynamic]',
+  providers: [{ provide: Compiler, useFactory: createJitCompiler }]
 })
 export class ElDynamicDirective implements OnInit, OnDestroy {
   
