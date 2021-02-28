@@ -1,12 +1,12 @@
 {
   "name": "@fsdk/element-angular",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "element ui for angular",
   "private": true,
   "scripts": {
     "start": "ng build element-angular && ng serve -o",
     "build": "ng build",
-    "build:publish": "ng build element-angular && gulp copy-assets",
+    "build:publish": "ng build element-angular --prod && gulp copy-assets",
     "ex:publish": "node build/publish.js",
     "i18n": "./node_modules/.bin/ng-xi18n -p ./ex --i18nFormat=xlf --locale=en-US",
     "elements:upload": "node build/bin/elements-upload.locale",

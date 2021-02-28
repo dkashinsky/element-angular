@@ -10,7 +10,7 @@ This project is intended to bring Element UI Kit (https://element.eleme.io/#/en-
 
 The project was initally forked from https://github.com/ElemeFE/element-angular in order to update dependencies so that it can be used along with Angular 9+.
 
-It is now built and packaged with angular cli (v8) toolset and will hopefully be further updated to the current Angular version.
+It is now built and packaged with angular cli (v9) toolset and will hopefully be further updated to the current Angular version.
 
 ## Getting Started
 
