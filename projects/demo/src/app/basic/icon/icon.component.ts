@@ -13,8 +13,8 @@ export class ExIconComponent implements OnInit {
   code: string[] = code
   icons: string[]
   page: any = {
-    previous: { name: 'Typography 字体', link: '/basic/font' },
-    next: { name: 'Button 按钮', link: '/basic/button' },
+    previous: { name: 'Typography', link: '/basic/font' },
+    next: { name: 'Button', link: '/basic/button' },
   }
   
   constructor(
@@ -22,7 +22,7 @@ export class ExIconComponent implements OnInit {
   ) {}
   
   ngOnInit(): void {
-    this.docsService.getDocuments('icon-ex')
+    this.docsService.getIcons()
       .subscribe(res => this.icons = res)
   }
 }

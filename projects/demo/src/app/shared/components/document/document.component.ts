@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core'
 import { HighLightPipe } from '../../pipe'
 import { DocsService } from '../../services'
+import type { ComponentDocument } from '../../services/docs/docs.types'
 
 @Component({
   selector: 'ex-document',
@@ -12,7 +13,7 @@ export class ExDocumentComponent implements OnInit {
   
   @Input() doc: string = ''
   
-  apis: any = {}
+  apis: ComponentDocument
   errorMsg: string
   
   constructor(
