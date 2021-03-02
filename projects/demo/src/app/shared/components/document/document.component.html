@@ -4,11 +4,11 @@
 <table class="table" *ngIf="apis && apis.attrs">
   <thead>
   <tr>
-    <th i18n="@@shared-document-p-1">参数</th>
-    <th i18n="@@shared-document-p-2">说明</th>
-    <th i18n="@@shared-document-p-3">类型</th>
-    <th i18n="@@shared-document-p-4">可选值</th>
-    <th i18n="@@shared-document-p-5">默认值</th>
+    <th i18n="@@shared-document-p-1">Name</th>
+    <th i18n="@@shared-document-p-2">Description</th>
+    <th i18n="@@shared-document-p-3">Type</th>
+    <th i18n="@@shared-document-p-4">Enum</th>
+    <th i18n="@@shared-document-p-5">Default</th>
   </tr>
   </thead>
   <tbody>
@@ -17,7 +17,7 @@
     <td [innerHTML]="attr.notes"></td>
     <td>{{attr.type}}</td>
     <td>{{attr.enum !== null ? attr.enum : '—'}}</td>
-    <td>{{attr.default !== null ? attr.default : '-'}}</td>
+    <td>{{attr.default !== null ? attr.default : '—'}}</td>
   </tr>
   </tbody>
 </table>
