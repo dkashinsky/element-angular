@@ -1,7 +1,8 @@
-import { Component, forwardRef, Inject, LOCALE_ID, OnInit } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { DocsService } from '../../shared/services/docs/docs.service'
 import { SafeStyle, DomSanitizer, SafeUrl } from '@angular/platform-browser'
 import { NavigationStart, Router } from '@angular/router'
+import { CatalogItem } from '../../shared/services/docs/docs.types'
 
 @Component({
   selector: 'ex-side',
@@ -10,7 +11,7 @@ import { NavigationStart, Router } from '@angular/router'
 })
 export class ExSideComponent implements OnInit {
   
-  catalog: JSON
+  catalog: CatalogItem[]
   version: string
   currentLink: string
   
@@ -18,17 +19,12 @@ export class ExSideComponent implements OnInit {
     private router: Router,
     private docsService: DocsService,
     private sanitizer: DomSanitizer,
-    @Inject(forwardRef(() => LOCALE_ID)) private locale: string,
   ) {
   }
   
   cursorSylte(link: string | null): SafeStyle {
     const value = link ? 'pointer' : 'default'
     return this.sanitizer.bypassSecurityTrustStyle(`cursor: ${value}`)
-  }
-  
-  showName(item: any): string {
-    return this.locale === 'en-US' ? item['name-en'] : item.name
   }
   
   makeSafeUrl(link: string | null): SafeUrl {
@@ -38,7 +34,7 @@ export class ExSideComponent implements OnInit {
   
   ngOnInit(): void {
     this.docsService.getCatalog()
-      .subscribe(json => this.catalog = json)
+      .subscribe(catalog => this.catalog = catalog)
     this.docsService.getVersion()
       .subscribe((v: string) => this.version = v)
   
