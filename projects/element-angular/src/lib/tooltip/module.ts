@@ -3,16 +3,19 @@ import { CommonModule } from '@angular/common'
 import { ElTooltip } from './tooltip'
 import { ElSharedModule } from '../shared/module'
 
-export function getWindow(): any { return window }
-
 @NgModule({
   declarations: [ElTooltip],
   exports: [ElTooltip],
   imports: [CommonModule, ElSharedModule],
   entryComponents: [ElTooltip],
 })
-export class ElTooltipModule {
+class ElTooltipModule {
   static forRoot(): ModuleWithProviders<ElTooltipModule> {
     return { ngModule: ElTooltipModule, providers: []}
   }
+}
+
+export {
+  ElTooltip,
+  ElTooltipModule
 }

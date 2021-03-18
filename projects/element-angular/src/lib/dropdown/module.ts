@@ -11,8 +11,14 @@ import { ElDropdown } from './dropdown'
   imports: [CommonModule, ElButtonsModule, ElSharedModule],
   entryComponents: [ElDropdown],
 })
-export class ElDropdownModule {
+class ElDropdownModule {
   static forRoot(): ModuleWithProviders<ElDropdownModule> {
     return { ngModule: ElDropdownModule, providers: [] }
   }
+}
+
+export {
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownModule
 }

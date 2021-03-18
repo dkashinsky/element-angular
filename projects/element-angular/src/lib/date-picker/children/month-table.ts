@@ -17,7 +17,7 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
     </table>
   `,
 })
-export class EMonthTable implements OnInit, OnChanges {
+export class ElMonthTable implements OnInit, OnChanges {
   
   @Input() showWeekNumber: boolean = false
   @Input() model: number

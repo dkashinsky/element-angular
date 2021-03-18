@@ -22,8 +22,13 @@ import { ElUploadDragger } from './upload.dragger'
   ],
   entryComponents: [ElUpload],
 })
-export class ElUploadModule {
+class ElUploadModule {
   static forRoot(): ModuleWithProviders<ElUploadModule> {
     return { ngModule: ElUploadModule, providers: [ElUploadRequest] }
   }
+}
+
+export {
+  ElUpload,
+  ElUploadModule
 }

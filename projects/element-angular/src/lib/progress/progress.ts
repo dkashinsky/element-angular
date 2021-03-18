@@ -30,7 +30,7 @@ import { SafeStyle, DomSanitizer } from '@angular/platform-browser'
     </div>
   `,
 })
-export class Elprogress implements OnInit {
+export class ElProgress implements OnInit {
   
   @Input() percentage: number = 0
   @Input() type: string = 'line'

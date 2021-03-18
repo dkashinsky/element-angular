@@ -10,8 +10,14 @@ import { ElBreadcrumbItem } from './breadcrumb-item'
   imports: [CommonModule],
   entryComponents: [ElBreadcrumb],
 })
-export class ElBreadcrumbsModule {
+class ElBreadcrumbsModule {
   static forRoot(): ModuleWithProviders<ElBreadcrumbsModule> {
     return { ngModule: ElBreadcrumbsModule, providers: [] }
   }
+}
+
+export {
+  ElBreadcrumb,
+  ElBreadcrumbItem,
+  ElBreadcrumbsModule
 }

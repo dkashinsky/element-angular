@@ -13,8 +13,16 @@ import { ElMenu } from './menu'
   imports: [CommonModule, ElTooltipModule.forRoot()],
   entryComponents: [ElMenu, ElSubmenu, ElMenuItem, ElMenuItemGroup],
 })
-export class ElMenusModule {
+class ElMenusModule {
   static forRoot(): ModuleWithProviders<ElMenusModule> {
     return { ngModule: ElMenusModule, providers: [] }
   }
+}
+
+export {
+  ElMenu, 
+  ElSubmenu, 
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElMenusModule
 }

@@ -21,8 +21,14 @@ import { ElTableBody } from './children/body'
   imports: [CommonModule, ElSharedModule],
   entryComponents: [ElTable],
 })
-export class ElTableModule {
+class ElTableModule {
   static forRoot(): ModuleWithProviders<ElTableModule> {
     return { ngModule: ElTableModule, providers: [ElTableFormat] }
   }
+}
+
+export {
+  ElTable,
+  ElTableColumn,
+  ElTableModule
 }

@@ -10,8 +10,14 @@ import { ElCheckboxsModule } from '../checkbox/module'
   imports: [CommonModule, ElCheckboxsModule],
   entryComponents: [ElTree],
 })
-export class ElTreeModule {
+class ElTreeModule {
   static forRoot(): ModuleWithProviders<ElTreeModule> {
     return { ngModule: ElTreeModule, providers: []}
   }
+}
+
+export {
+  ElTree,
+  ElTreeItem,
+  ElTreeModule
 }

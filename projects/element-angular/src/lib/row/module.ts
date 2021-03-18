@@ -9,8 +9,13 @@ import { ElRowDirective } from './row.directive'
   imports: [CommonModule],
   entryComponents: [],
 })
-export class ElRowModule {
+class ElRowModule {
   static forRoot(): ModuleWithProviders<ElRowModule> {
     return { ngModule: ElRowModule, providers: [] }
   }
+}
+
+export {
+  ElRowDirective,
+  ElRowModule
 }

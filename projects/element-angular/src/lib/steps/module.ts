@@ -10,8 +10,14 @@ import { ElSteps } from './steps'
   imports: [CommonModule],
   entryComponents: [ElStep, ElSteps],
 })
-export class ElStepsModule {
+class ElStepsModule {
   static forRoot(): ModuleWithProviders<ElStepsModule> {
     return { ngModule: ElStepsModule, providers: [] }
   }
+}
+
+export {
+  ElStep,
+  ElSteps,
+  ElStepsModule
 }

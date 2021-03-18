@@ -12,8 +12,15 @@ import { ElRadio } from './radio'
   imports: [CommonModule, FormsModule],
   entryComponents: [ElRadio, ElRadioGroup, ElRadioButton],
 })
-export class ElRadiosModule {
+class ElRadiosModule {
   static forRoot(): ModuleWithProviders<ElRadiosModule> {
     return { ngModule: ElRadiosModule, providers: [] }
   }
+}
+
+export {
+  ElRadio, 
+  ElRadioGroup, 
+  ElRadioButton,
+  ElRadiosModule
 }

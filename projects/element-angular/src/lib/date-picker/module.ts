@@ -6,16 +6,25 @@ import { ElDataPicker } from './picker'
 import { ElDatePickerPanel } from './picker-panel'
 import { ElDateTable } from './children/date-table'
 import { ElYearTable } from './children/year-table'
-import { EMonthTable } from './children/month-table'
+import { ElMonthTable } from './children/month-table'
 
 @NgModule({
-  declarations: [ElDataPicker, ElDatePickerPanel, ElDateTable, ElYearTable, EMonthTable],
-  exports: [ElDataPicker, ElDatePickerPanel, ElDateTable, ElYearTable, EMonthTable],
-  imports: [CommonModule, FormsModule,ElInputsModule],
+  declarations: [ElDataPicker, ElDatePickerPanel, ElDateTable, ElYearTable, ElMonthTable],
+  exports: [ElDataPicker, ElDatePickerPanel, ElDateTable, ElYearTable, ElMonthTable],
+  imports: [CommonModule, FormsModule, ElInputsModule],
   entryComponents: [ElDataPicker],
 })
-export class ElDateModule {
+class ElDateModule {
   static forRoot(): ModuleWithProviders<ElDateModule> {
     return { ngModule: ElDateModule, providers: [] }
   }
+}
+
+export {
+  ElDataPicker, 
+  ElDatePickerPanel, 
+  ElDateTable, 
+  ElYearTable, 
+  ElMonthTable,
+  ElDateModule
 }

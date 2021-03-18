@@ -9,8 +9,13 @@ import { ElLoadingDirective } from './loading.directive'
   imports: [CommonModule, ElSharedModule],
   entryComponents: [],
 })
-export class ElLoadingModule {
+class ElLoadingModule {
   static forRoot(): ModuleWithProviders<ElLoadingModule> {
     return { ngModule: ElLoadingModule, providers: []}
   }
+}
+
+export {
+  ElLoadingDirective,
+  ElLoadingModule
 }

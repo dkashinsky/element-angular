@@ -1,16 +1,21 @@
 import { NgModule, ModuleWithProviders } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { Elprogress } from './progress'
+import { ElProgress } from './progress'
 
 
 @NgModule({
-  declarations: [Elprogress],
-  exports: [Elprogress],
+  declarations: [ElProgress],
+  exports: [ElProgress],
   imports: [CommonModule],
-  entryComponents: [Elprogress],
+  entryComponents: [ElProgress],
 })
-export class ElProgressModule {
+class ElProgressModule {
   static forRoot(): ModuleWithProviders<ElProgressModule> {
     return { ngModule: ElProgressModule, providers: [] }
   }
+}
+
+export {
+  ElProgress,
+  ElProgressModule
 }

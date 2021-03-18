@@ -11,8 +11,13 @@ import { ElFormItem } from '../form/form-item'
   imports: [CommonModule, FormsModule],
   entryComponents: [ElInput],
 })
-export class ElInputsModule {
+class ElInputsModule {
   static forRoot(): ModuleWithProviders<ElInputsModule> {
     return { ngModule: ElInputsModule, providers: [ ElFormItem ] }
   }
+}
+
+export {
+  ElInput,
+  ElInputsModule
 }

@@ -10,8 +10,14 @@ import { ElCollapseItem } from './collapse-item'
   imports: [CommonModule],
   entryComponents: [ElCollapse],
 })
-export class ElCollapseModule {
+class ElCollapseModule {
   static forRoot(): ModuleWithProviders<ElCollapseModule> {
     return { ngModule: ElCollapseModule, providers: [] }
   }
+}
+
+export {
+  ElCollapse,
+  ElCollapseItem,
+  ElCollapseModule
 }

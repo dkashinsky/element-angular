@@ -21,8 +21,17 @@ import { ElPaginationJump } from './children/jump'
   imports: [CommonModule, FormsModule, ElSelectModule],
   entryComponents: [ElPagination],
 })
-export class ElPaginationModule {
+class ElPaginationModule {
   static forRoot(): ModuleWithProviders<ElPaginationModule> {
     return { ngModule: ElPaginationModule, providers: [] }
   }
+}
+
+export {
+  ElPagination,
+  ElPaginationSize,
+  ElPaginationJump,
+  ElPaginationPager,
+  ElPaginationButton,
+  ElPaginationModule
 }

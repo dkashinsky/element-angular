@@ -10,8 +10,14 @@ import { ElButtonGroup } from './button-group'
   imports: [CommonModule],
   entryComponents: [ElButton, ElButtonGroup],
 })
-export class ElButtonsModule {
+class ElButtonsModule {
   static forRoot(): ModuleWithProviders<ElButtonsModule> {
     return { ngModule: ElButtonsModule, providers: [] }
   }
+}
+
+export {
+  ElButton,
+  ElButtonGroup,
+  ElButtonsModule
 }

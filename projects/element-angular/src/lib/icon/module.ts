@@ -9,8 +9,13 @@ import { ElIcon } from './icon'
   imports: [CommonModule],
   entryComponents: [ElIcon],
 })
-export class ElIconsModule {
+class ElIconsModule {
   static forRoot(): ModuleWithProviders<ElIconsModule> {
     return { ngModule: ElIconsModule, providers: [] }
   }
+}
+
+export {
+  ElIcon,
+  ElIconsModule
 }

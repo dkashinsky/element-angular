@@ -3,16 +3,19 @@ import { CommonModule } from '@angular/common'
 import { ElSharedModule } from '../shared/module'
 import { ElDialog } from './dialog'
 
-export function getDocument(): any { return document }
-export function getWindow(): any { return window }
 @NgModule({
   declarations: [ElDialog],
   exports: [ElDialog],
   imports: [CommonModule, ElSharedModule],
   entryComponents: [ElDialog],
 })
-export class ElDialogModule {
+class ElDialogModule {
   static forRoot(): ModuleWithProviders<ElDialogModule> {
     return { ngModule: ElDialogModule, providers: [] }
   }
+}
+
+export {
+  ElDialog,
+  ElDialogModule
 }

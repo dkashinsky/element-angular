@@ -10,8 +10,13 @@ import { ElInputNumber } from './input-number'
   imports: [CommonModule, FormsModule],
   entryComponents: [ElInputNumber],
 })
-export class ElInputNumberModule {
+class ElInputNumberModule {
   static forRoot(): ModuleWithProviders<ElInputNumberModule> {
     return { ngModule: ElInputNumberModule, providers: [] }
   }
+}
+
+export {
+  ElInputNumber,
+  ElInputNumberModule
 }

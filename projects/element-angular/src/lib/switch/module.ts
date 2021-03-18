@@ -10,8 +10,13 @@ import { FormsModule } from '@angular/forms'
   imports: [CommonModule, FormsModule],
   entryComponents: [ElSwitch],
 })
-export class ElSwitchModule {
+class ElSwitchModule {
   static forRoot(): ModuleWithProviders<ElSwitchModule> {
     return { ngModule: ElSwitchModule, providers: [] }
   }
+}
+
+export {
+  ElSwitch,
+  ElSwitchModule
 }

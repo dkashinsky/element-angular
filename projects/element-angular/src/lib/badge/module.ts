@@ -9,8 +9,13 @@ import { ElBadge } from './badge'
   imports: [CommonModule],
   entryComponents: [ElBadge],
 })
-export class ElBadgesModule {
+class ElBadgesModule {
   static forRoot(): ModuleWithProviders<ElBadgesModule> {
     return { ngModule: ElBadgesModule, providers: [] }
   }
+}
+
+export {
+  ElBadge,
+  ElBadgesModule
 }

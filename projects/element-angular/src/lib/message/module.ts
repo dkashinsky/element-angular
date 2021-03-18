@@ -9,10 +9,15 @@ import { ElMessageService } from './message.service'
   imports: [CommonModule],
   entryComponents: [ElMessageContainer],
 })
-export class ElMessagesModule {
+class ElMessagesModule {
   static forRoot(): ModuleWithProviders<ElMessagesModule> {
     return { ngModule: ElMessagesModule, providers: [
       ElMessageService,
     ]}
   }
+}
+
+export {
+  ElMessageContainer,
+  ElMessagesModule
 }

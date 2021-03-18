@@ -9,8 +9,13 @@ import { ElTag } from './tag'
   imports: [CommonModule],
   entryComponents: [ElTag],
 })
-export class ElTagsModule {
+class ElTagsModule {
   static forRoot(): ModuleWithProviders<ElTagsModule> {
     return { ngModule: ElTagsModule, providers: [] }
   }
+}
+
+export {
+  ElTag,
+  ElTagsModule
 }

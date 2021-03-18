@@ -9,8 +9,13 @@ import { ElRate } from './rate'
   imports: [CommonModule],
   entryComponents: [ElRate],
 })
-export class ElRateModule {
+class ElRateModule {
   static forRoot(): ModuleWithProviders<ElRateModule> {
     return { ngModule: ElRateModule, providers: [] }
   }
+}
+
+export {
+  ElRate,
+  ElRateModule
 }

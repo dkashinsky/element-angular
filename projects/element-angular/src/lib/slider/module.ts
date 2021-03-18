@@ -11,8 +11,14 @@ import { ElSlider } from './slider'
   imports: [CommonModule, ElTooltipModule],
   entryComponents: [ElSlider],
 })
-export class ElSliderModule {
+class ElSliderModule {
   static forRoot(): ModuleWithProviders<ElSliderModule> {
     return { ngModule: ElSliderModule, providers: [] }
   }
+}
+
+export {
+  ElSlider,
+  ElSliderButton,
+  ElSliderModule
 }

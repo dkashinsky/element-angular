@@ -9,10 +9,15 @@ import { ElNotificationService } from './notification.service'
   imports: [CommonModule],
   entryComponents: [ElNotificationContainer],
 })
-export class ElNotificationModule {
+class ElNotificationModule {
   static forRoot(): ModuleWithProviders<ElNotificationModule> {
     return { ngModule: ElNotificationModule, providers: [
       ElNotificationService,
     ]}
   }
+}
+
+export {
+  ElNotificationContainer,
+  ElNotificationModule
 }
