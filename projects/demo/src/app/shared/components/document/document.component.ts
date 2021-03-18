@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core'
+import { Observable } from 'rxjs'
 import { HighLightPipe } from '../../pipe'
 import { DocsService } from '../../services'
 import type { ComponentDocument } from '../../services/docs/docs.types'
@@ -13,17 +14,14 @@ export class ExDocumentComponent implements OnInit {
   
   @Input() doc: string = ''
   
-  apis: ComponentDocument
-  errorMsg: string
+  apis$: Observable<ComponentDocument> 
   
   constructor(
     private docsService: DocsService
   ) {
   }
-  
+
   ngOnInit(): void {
-    this.docsService.getDocuments(this.doc)
-      .subscribe(res => this.apis = res,
-        err => err.status === 404 && (this.errorMsg = '文档开发中..'))
+    this.apis$ = this.docsService.getDocuments(this.doc);
   }
 }
