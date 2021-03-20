@@ -5,6 +5,7 @@
 </div>
 
 <h2 align="center">Element for Angular</h2>
+
 [![npm version](https://badge.fury.io/js/%40fsdk%2Felement-angular.svg)](https://badge.fury.io/js/%40fsdk%2Felement-angular)
 ![npm](https://img.shields.io/npm/dt/@fsdk/element-angular)
 
