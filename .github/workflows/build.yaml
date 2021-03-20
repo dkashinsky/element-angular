@@ -26,5 +26,5 @@ jobs:
         run: npm run build
 
       - name: Build demo application
-        run: npm run build
+        run: npm run ex:build
         
