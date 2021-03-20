@@ -5,6 +5,8 @@
 </div>
 
 <h2 align="center">Element for Angular</h2>
+[![npm version](https://badge.fury.io/js/%40fsdk%2Felement-angular.svg)](https://badge.fury.io/js/%40fsdk%2Felement-angular)
+![npm](https://img.shields.io/npm/dt/@fsdk/element-angular)
 
 This project is intended to bring Element UI Kit (https://element.eleme.io/#/en-US) to the angular world.
 
