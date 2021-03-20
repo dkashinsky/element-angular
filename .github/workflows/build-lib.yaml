@@ -19,7 +19,7 @@ jobs:
             ${{ runner.os }}-node-
             
       - name: Install dependencies
-        if: node-cache.cache.outputs.cache-hit != 'true'
+        if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Build
