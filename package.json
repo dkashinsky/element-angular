@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "start": "ng build element-angular && ng serve -o",
-    "build": "ng build",
+    "build": "ng build element-angular",
     "build:publish": "ng build element-angular --prod && gulp copy-assets",
+    "ex:build": "ng build demo",
     "ex:publish": "node build/publish.js",
     "i18n": "./node_modules/.bin/ng-xi18n -p ./ex --i18nFormat=xlf --locale=en-US",
     "elements:upload": "node build/bin/elements-upload.locale",
