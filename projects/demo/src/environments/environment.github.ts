@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  deploymentUrl: '/',
+  deploymentUrl: '/element-angular/',
   version: 'new',
 }
