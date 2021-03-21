@@ -36,3 +36,10 @@ const copyAsset = async ({ src, dest }) => {
 gulp.task('copy-assets', async () => {
   await Promise.all(assets.map(copyAsset));
 });
+
+gulp.task('deploy', async () => {
+  // TODO: add library build here
+  // TODO: add application build here
+  await copyAsset({ src: './gh-pages/index.html', dest: './gh-pages/404.html' });
+  // TODO: execute ghpages.publish here
+});
