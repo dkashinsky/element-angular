@@ -6,7 +6,7 @@ import type { CatalogItem, ComponentDocument } from './docs.types';
 
 @Injectable()
 export class DocsService {
-  baseUrl: string = '/docs';
+  baseUrl: string = `${environment.deploymentUrl}docs`;
   
   constructor(
     private http: HttpClient,
